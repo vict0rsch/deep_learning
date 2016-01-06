@@ -52,7 +52,7 @@ Regarding our purpose here, Theano's main features to remember are:
 
 <http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html>
 
-I strongly recommend you spend the time you need to understand the explanation from the link above. However here is a very short summary.
+I **strongly** recommend you spend the time you need to understand the explanation from the link above. However here is a very short summary.
 
 ```python
 import theano.tensor as T
@@ -62,8 +62,13 @@ z = x + y
 ```
 ![Theano graph illustration](http://deeplearning.net/software/theano/_images/apply1.png)
 
-What there
+Basically Theano's way of computing is just like when you try and solve a physics or maths problem : you write equations, you define quantities that you re-use in further equations and *then* you apply numbers to your results. 
 
+Let's take an example : say you define a variable `x`. Then you define a quantity `y = x^2`. Lastly say you want to evaluate `y - x^2`. You do know it will be zero. So does Theano. It does not need numbers to compute a mathematical expression.  
+
+This is the **graph**'s idea: variables are propagated so that Theano knows their interdependancies and then it applies numeric values to the variables.  
+
+In the code example above, `x` and `y` a 
 
 
 
