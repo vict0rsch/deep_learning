@@ -25,7 +25,7 @@ Keras can use either Theano or Google's Tensorflow as a processing backend. I ha
 Theano
 ---
 ### What is it?
-<http://deeplearning.net/software/theano/>
+[See Theano's presentation](http://deeplearning.net/software/theano/)
 
 >Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Theano features:
 >
@@ -45,14 +45,20 @@ Theano has been powering large-scale computationally intensive scientific invest
 Regarding our purpose here, Theano's main features to remember are:  
 
 * Its graph structure
-* Variables
 * How it handles functions
+* Variables
 
 ### Theano's graph
 
-<http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html>
+[Theano's Symbolic Graph](http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html)
 
 I **strongly** recommend you spend the time you need to understand the explanation from the link above. However here is a very short summary.
+
+Basically Theano's way of computing is just like when you try and solve a physics or maths problem : you write equations, you define quantities that you re-use in further equations and *then* you apply numbers to your results. 
+
+Let's take an example : say you define a variable `x`. Then you define a quantity `y = x^2`. Lastly say you want to evaluate `y - x^2`. You do know it will be zero. So does Theano. It does not need numbers to compute a mathematical expression.  
+
+This is the **graph**'s idea: variables are propagated so that Theano knows their interdependancies and then it applies numeric values to the variables.  
 
 ```python
 import theano.tensor as T
@@ -62,13 +68,35 @@ z = x + y
 ```
 ![Theano graph illustration](http://deeplearning.net/software/theano/_images/apply1.png)
 
-Basically Theano's way of computing is just like when you try and solve a physics or maths problem : you write equations, you define quantities that you re-use in further equations and *then* you apply numbers to your results. 
+In this code example (from [Theano's Symbolic Graph](http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html)), `x` and `y` are declared variables, they are going to be used afterwards. Then `z` is defined as an expression depending on `x`and `z`. Theano generates the above graph to link variables and operations together.
 
-Let's take an example : say you define a variable `x`. Then you define a quantity `y = x^2`. Lastly say you want to evaluate `y - x^2`. You do know it will be zero. So does Theano. It does not need numbers to compute a mathematical expression.  
+To evaluate `z` on numerical values of `x` and `y` (say 4 and 1 for instance), you will need functions.
 
-This is the **graph**'s idea: variables are propagated so that Theano knows their interdependancies and then it applies numeric values to the variables.  
+### Theano functions
 
-In the code example above, `x` and `y` a 
+[Theano's function documentation](http://deeplearning.net/software/theano/library/compile/function.html)  
+[Function examples](http://deeplearning.net/software/theano/tutorial/examples.html)
 
+Once again, I can not underline enough the need to go deeply into the above documentation. But once again, here is a short summary ob the **basics**...
 
+As mentionned above, functions in Theano are the equivalent of a numerical application : they come last after the definition of variables, operations and expressions. When the Python interpreter comes to the line `foo = theano.function(...)`, it creates the graph linking variables. This is the **compilation** time. Then the function can be called on numeric values.
+
+Here is the example adapted from [Function examples](http://deeplearning.net/software/theano/tutorial/examples.html)
+
+```python
+import theano
+import theano.tensor as T
+
+x = T.dmatrix('x')
+sigmoid = 1 / (1 + T.exp(-x))
+logistic = theano.function([x], sigmoid)
+example = [[0, 1], [-1, -2]]
+logistic(example)
+```
+```python
+array([[ 0.5       ,  0.73105858],
+       [ 0.26894142,  0.11920292]])
+```
+
+So here we declare a Theano variable `x`. Then we define another variable, `sigmoid`, as an expression of `x`. We then declare the Theano function `logistic`, that compiles ond optimizes the execution graph linking `sigmoid` and `x`. Finaly we give `logistic` a numerical application usinig `example`.
 
