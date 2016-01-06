@@ -22,7 +22,7 @@ Installations
 <http://keras.io/#installation>  
 Keras can use either Theano or Google's Tensorflow as a processing backend. I have not tried Tensorflow so everything I say might or not be portable to the Tensorflow backend. My feeling is that it is. 
 
-Theano
+Theano Quick Intro
 ---
 ### What is it?
 [See Theano's presentation](http://deeplearning.net/software/theano/)
@@ -98,5 +98,15 @@ array([[ 0.5       ,  0.73105858],
        [ 0.26894142,  0.11920292]])
 ```
 
-So here we declare a Theano variable `x`. Then we define another variable, `sigmoid`, as an expression of `x`. We then declare the Theano function `logistic`, that compiles ond optimizes the execution graph linking `sigmoid` and `x`. Finaly we give `logistic` a numerical application usinig `example`.
+So here we declare a Theano variable `x`. Then we define another variable, `sigmoid`, as an expression of `x`. We then declare the Theano function `logistic`, that compiles ond optimizes the execution graph linking `sigmoid` and `x`. Finaly we give `logistic` a numerical application using `example`.
+
+Theano functions are way richer thant that so I suggest you go and look at least into **[Params](http://deeplearning.net/software/theano/tutorial/examples.html#setting-a-default-value-for-an-argument)**, **[Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)** and  **Updates** (4th paragraph in [Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)).
+
+### Variables
+
+[All fully typed constructors](http://deeplearning.net/software/theano/library/tensor/basic.html#all-fully-typed-constructors)
+
+As seen before, there are variables and shared variables in Theano. Also, Theano uses a new kind of equivalent to Numpy's `ndarray` : Tensors. These are strongly typed. You can find in the above link all the tensor types you can use but be aware that the nomenclature is based both on dimensionnality and type. 
+
+>Theano provides a list of predefined tensor types that can be used to create a tensor variables. Variables can be named to facilitate debugging, and all of these constructors accept an optional name argument.
 
