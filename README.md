@@ -7,7 +7,15 @@ How to use
 This repository contains Deep Learning tutorials. 
 Lasagne and Keras are Theano-based so I recommend you get familiar with Theano before starting these ones.  
 
-However **Keras** is closer to usual Python than Lasagne so it requires a weaker understanding of Theano. The main thing to understand to get started with Keras is Theano's graph structure.
+However **Keras** is way closer to usual Python than Lasagne so it requires a weaker understanding of Theano. The main thing to understand to get started with Keras is Theano's graph structure.
+
+
+This is just a quick and easy intro. Theano is about much more than this. Especially regarding [GPU](http://deeplearning.net/software/theano/tutorial/using_gpu.html) calculation and [Automatic Differenciation](http://deeplearning.net/software/theano/tutorial/gradients.html).
+
+We concentrate here on a few features of Theano that will be needed in Lasagne mostly and just a little in Keras. You will not learn Theano here but get a glimpse at how it works and how it can be used in a Deep Learning context. 
+
+See the full tutorial [here](http://deeplearning.net/software/theano/tutorial/).
+
 
 Installations
 ---
@@ -110,3 +118,7 @@ As seen before, there are variables and shared variables in Theano. Also, Theano
 
 >Theano provides a list of predefined tensor types that can be used to create a tensor variables. Variables can be named to facilitate debugging, and all of these constructors accept an optional name argument.
 
+### Warning
+Debugging Theano errors can be quite difficult. I suggest you go through [this](http://deeplearning.net/software/theano/tutorial/debug_faq.html) if you have troubles. 
+
+Also, if you do not understand why printing your variables with standard `print` does not help, you are not ready to go on with Theano (but who said Keras needed that much Theano?).
