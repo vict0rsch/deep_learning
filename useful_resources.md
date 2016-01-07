@@ -17,6 +17,8 @@ Starting with (Deep) Learning
 
 	_This is where I started with Deep Learning and I want to **thank [M. Nielsen](http://michaelnielsen.org/)** for his very informative and pedagogical work._
 	
+4. **<http://cs231n.github.io/>** A great set of lessons, from a Python/Numpy introduction to Convolutional Neural Networks. It also rapidly mentions other machine learning techniques such as SVMs and kNN.   
+	
 Reading papers
 ---
 If you like reading papers and read a lot of papers (or at least once a month) I suggest you download and use **[Mendeley](https://www.mendeley.com/dashboard/)**:
