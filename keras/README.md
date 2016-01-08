@@ -93,6 +93,125 @@ Keras makes it very easy to load the Mnist data. It is split between train and t
 Images in mnist are greyscale so values are `int` between 0 and 255. We are going to rescale the inputs between 0 and 1 so we first need to change types from `int` to `float32` or we'll get 0 when dividing by 255.
 
 Then we need to change the targets. `y_train` and `y_test` have shapes `(60000,)` and `(10000,)`  with values from 0 to 9. We do not expect our network to output a value from 0 to 9, rather we will have 10 output neurons with `softmax` activations, attibuting the class to the best firing neuron (`argmax` of activations). `np_utils.to_categorical`
- returns vectors with 0s and one 1 at the index of the transformed number : `[3] -> [0, 0, 0, 1, 0, 0, 0, 0, 0, 0]`.
+ returns vectors of dimensions `(1,10)` with 0s and one 1 at the index of the transformed number : `[3] -> [0, 0, 0, 1, 0, 0, 0, 0, 0, 0]`.
  
 Lastly we reshape the examples so that they are shape `(60000,784)`, `(10000, 784)` and not `(60000, 28, 28)`, `(10000, 28, 28)`.
+
+
+### Creating the model
+
+```python
+def init_model():
+    start_time = time.time()
+    print 'Compiling Model ... '
+    model = Sequential()
+    model.add(Dense(500, input_dim=784))
+    model.add(Activation('relu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(300))
+    model.add(Activation('relu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(10))
+    model.add(Activation('softmax'))
+
+    rms = RMSprop()
+    model.compile(loss='categorical_crossentropy', optimizer=rms)
+    print 'Model compield in {0} seconds'.format(time.time() - start_time)
+    return model
+```
+
+Here is the core of what makes your neural network : the `model`.  
+We begin with creating an instance of the `Sequential` model. Then we add a couple hidden layers and an output layer. After that we instanciate the `rms` optimizer that will update the network's parameters according to the RMSProp algorithm. Lastly we compile the model with the [`categorical_crossentropy`](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#tensor.nnet.categorical_crossentropy) cost / loss / objective function and the optimizer.
+
+Let's get into the model's details :
+
+* The first hidden layer is has 500 units, [rectified linear unit](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#theano.tensor.nnet.relu) activation function 30% of dropout. Also, it needs the input dimension : by specifying `input_dim = 784` we tell this first layer that the virtual input layer will be of size 784. 
+* The second hidden layer has 300 units, rectified linear unit activation function 30% of dropout.
+* The output layer has 10 units (because we have 10 categories / labels in mnist), no dropout (of course...) and a [softmax](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#tensor.nnet.softmax) activation function to output a probability. `softmax` output + `categorical_crossentropy` is standard for multiclass classification. 
+* This structure 784-500-300-10 comes from Y. LeCun's [website](http://yann.lecun.com/exdb/mnist/) citing G. Hinton's unpublished work
+* Here I have kept the default initialization of weights and biases but you can find [here](http://keras.io/initializations/) the list of possible initializations. Also, [here](http://keras.io/activations/) are the possible activations.
+
+Remember I mentioned that Keras used Theano? well, you just went through it. Creating the `model`and `optimizer` instances as well as adding layers is all about creating Theano variables and explaining how they depend on each other. Then the compilation time is simply about declaring an undercover Theano function. This is why this step can be a little long. The more complex your model, the longer (captain here).
+
+And yes, that's it about Theano. Told you you did not need much! 
+
+
+### Training the network
+
+```python
+def run_network(data=None, model=None, epochs=10, batch=128):
+    try:
+        start_time = time.time()
+        if data is None:
+            X_train, X_test, y_train, y_test = load_data()
+        else:
+            X_train, X_test, y_train, y_test = data
+
+        if model is None:
+            model = init_model()
+
+        history = LossHistory()
+
+        print 'Training model...'
+        model.fit(X_train, y_train, nb_epoch=epochs, batch_size=batch,
+                  callbacks=[history], show_accuracy=True,
+                  validation_data=(X_test, y_test), verbose=2)
+
+        print "Training duration : {0}".format(time.time() - start_time)
+        score = model.evaluate(X_test, y_test, batch_size=16,
+                               show_accuracy=True)
+
+        print "Network's test score [loss, accuracy]: {0}".format(score)
+        return model, history.losses
+    except KeyboardInterrupt:
+        print ' KeyboardInterrupt'
+        return model, history.losses
+```
+The `try/except` is there so that you can stop the network's training without losing it.
+
+With Keras, training your network is a piece of cake: all you have to do is call `fit` on your model and provide the data. 
+
+So first we load the data, create the model and start the loss history. All there is to do then is fit the network to the data. Here are `fit`'s arguments:
+
+* `X_train, y_train` are the training data
+* `nb_epoch` is perfecty transparent and `epochs` is defined when calling the `run_network`function. 
+* `batch_size`idem as `nb_epoch`. Keras does all the work for you regarding epochs and batch training. 
+* `callbacks` is a list of callbacks. Here we only provide `history` but you could provide any number of callbacks. 
+* `show_accuracy` is set to true so that during the training Keras shows the training accuracy.
+* `validation_data` is, well, the validation data. Here we use the test data but it could be different. Also you could specify a `validation_split` float between 0 and 1 instead, spliting the training data for validation.  
+* `verbose = 2` so that Keras displays both the training and validation loss and accuracy. 
+
+###Plot
+```python
+def plot_losses(losses):
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.plot(losses)
+    ax.set_title('Loss per batch')
+    fig.show()
+```
+Nothing much here, just that it is helpful to monitor the loss during training but you could provide any list here of course. 
+
+###Usage
+```python
+import feedforward_keras_mnist as fkm
+
+model, losses = fkm.run_network()
+
+fkm.plot_losses(losses)
+```
+
+if you do not want to reload the data every time:
+
+```python
+import feedforward_keras_mnist as fkm
+
+data = fkm.load_data()
+model, losses = fkm.run_network(data=data)
+
+# change some parameters in your code
+
+reload(fkm)
+model, losses = fkm.run_network(data=data)
+
+```

@@ -25,14 +25,14 @@ def load_data():
     X_train = X_train.astype('float32')
     X_test = X_test.astype('float32')
 
+    X_train /= 255
+    X_test /= 255
+
     y_train = np_utils.to_categorical(y_train, 10)
     y_test = np_utils.to_categorical(y_test, 10)
 
     X_train = np.reshape(X_train, (60000, 784))
     X_test = np.reshape(X_test, (10000, 784))
-
-    X_train /= 255
-    X_test /= 255
 
     print 'Data loaded.'
     return [X_train, X_test, y_train, y_test]
@@ -57,7 +57,7 @@ def init_model():
     return model
 
 
-def run_network(data=None, model=None, epochs=10):
+def run_network(data=None, model=None, epochs=10, batch=128):
     try:
         start_time = time.time()
         if data is None:
@@ -71,7 +71,7 @@ def run_network(data=None, model=None, epochs=10):
         history = LossHistory()
 
         print 'Training model...'
-        model.fit(X_train, y_train, nb_epoch=epochs, batch_size=128,
+        model.fit(X_train, y_train, nb_epoch=epochs, batch_size=batch,
                   callbacks=[history], show_accuracy=True,
                   validation_data=(X_test, y_test), verbose=2)
 
@@ -83,7 +83,7 @@ def run_network(data=None, model=None, epochs=10):
         return model, history.losses
     except KeyboardInterrupt:
         print ' KeyboardInterrupt'
-        return model, np.array(history.losses)
+        return model, history.losses
 
 
 def plot_losses(losses):
