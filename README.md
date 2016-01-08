@@ -12,7 +12,7 @@ However **Keras** is way closer to usual Python than Lasagne so it requires a we
 
 This is just a quick and easy intro. Theano is about much more than this. Especially regarding [GPU](http://deeplearning.net/software/theano/tutorial/using_gpu.html) calculation and [Automatic Differenciation](http://deeplearning.net/software/theano/tutorial/gradients.html).
 
-We concentrate here on a few features of Theano that will be needed in Lasagne mostly and just a little in Keras. You will not learn Theano here but get a glimpse at how it works and how it can be used in a Deep Learning context. 
+We concentrate, in [theano.md](https://github.com/Vict0rSch/Deep-Learning/blob/master/theano.md), on a few features of Theano that will be needed in Lasagne mostly and just a little in Keras. You will not learn Theano here but get a glimpse at how it works and how it can be used in a Deep Learning context. 
 
 See the full tutorial [here](http://deeplearning.net/software/theano/tutorial/).
 
