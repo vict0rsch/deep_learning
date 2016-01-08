@@ -41,6 +41,7 @@ def load_data():
 
 
 def init_model():
+    start_time = time.time()
     print 'Compiling Model ... '
     model = Sequential()
     model.add(Dense(500, input_dim=784))
@@ -54,7 +55,7 @@ def init_model():
 
     rms = RMSprop()
     model.compile(loss='categorical_crossentropy', optimizer=rms)
-    print 'Model compield'
+    print 'Model compield in {0} seconds'.format(time.time() - start_time)
     return model
 
 
