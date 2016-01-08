@@ -14,14 +14,12 @@ class LossHistory(cb.Callback):
         self.losses = []
 
     def on_batch_end(self, batch, logs={}):
-        loss = logs.get('loss')
-        self.losses.append(loss)
+        batch_loss = logs.get('loss')
+        self.losses.append(batch_loss)
 
 
-# http://www.iro.umontreal.ca/~lisa/deep/data/mnist/mnist.pkl.gz
 def load_data():
     print 'Loading data...'
-    # ~/.keras/datasets/
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
     X_train = X_train.astype('float32')
