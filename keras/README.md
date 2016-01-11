@@ -6,7 +6,7 @@ This section will walk you through the code of `feedforward_keras_mnist.py`. Thi
 * **[mnist dataset in Keras](http://keras.io/datasets/#mnist-database-of-handwritten-digits)**
 * **[Loss history callback](http://keras.io/callbacks/#example-recording-loss-history)**
 
-If you are not yet familiar with what mnist is, please spend a couple minutes [there](http://yann.lecun.com/exdb/mnist/). It is basically a set of hadwritten digit images of size 28*28 (= 784) in greyscale (0-255). There are 60,000 training examples and 10,000 testing examples.
+If you are not yet familiar with what mnist is, please spend a couple minutes [there](http://yann.lecun.com/exdb/mnist/). It is basically a set of hadwritten digit images of size 28*28 (= 784) in greyscale (0-255). There are 60,000 training examples and 10,000 testing examples. The training examples could be also split into 50,000 training examples and 10,000 validation examples.
 
 By the way, Keras's documentation is better and better (and it's already good) and the community answers fast to questions or implementation problems.
 
@@ -18,9 +18,9 @@ Feedforward Keras mnist
 
 ###General orginization
 
-I start with importing everything we'll need (no shit...). Then I define my `callback` class I will use to store the loss history. Lastly I define functions to load the data, compile the model, train it and plot the losses. 
+We start with importing everything we'll need (no shit...). Then we define the `callback` class that will be used to store the loss history. Lastly we define functions to load the data, compile the model, train it and plot the losses. 
 
-The overall philosophy is modularity. I use default parameters in the `run_network` function so that you can feed it with already loaded data (and not re-load it each time you train a network) or a pre-trained network `model`.
+The overall philosophy is modularity. We use default parameters in the `run_network` function so that you can feed it with already loaded data (and not re-load it each time you train a network) or a pre-trained network `model`.
 
 Also, don't forget the Python's `reload(package)`
 function, very useful to run updates from your code without quitting (I)python.
@@ -125,10 +125,10 @@ We begin with creating an instance of the `Sequential` model. Then we add a coup
 
 Let's get into the model's details :
 
-* The first hidden layer is has 500 units, [rectified linear unit](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#theano.tensor.nnet.relu) activation function 30% of dropout. Also, it needs the input dimension : by specifying `input_dim = 784` we tell this first layer that the virtual input layer will be of size 784. 
-* The second hidden layer has 300 units, rectified linear unit activation function 30% of dropout.
+* The first hidden layer is has 500 units, [rectified linear unit](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#theano.tensor.nnet.relu) activation function and 40% of dropout. Also, it needs the input dimension : by specifying `input_dim = 784` we tell this first layer that the virtual input layer will be of size 784. 
+* The second hidden layer has 300 units, rectified linear unit activation function and 40% of dropout.
 * The output layer has 10 units (because we have 10 categories / labels in mnist), no dropout (of course...) and a [softmax](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#tensor.nnet.softmax) activation function to output a probability. `softmax` output + `categorical_crossentropy` is standard for multiclass classification. 
-* This structure 784-500-300-10 comes from Y. LeCun's [website](http://yann.lecun.com/exdb/mnist/) citing G. Hinton's unpublished work
+* This structure 500-300-10 comes from Y. LeCun's [website](http://yann.lecun.com/exdb/mnist/) citing G. Hinton's unpublished work
 * Here I have kept the default initialization of weights and biases but you can find [here](http://keras.io/initializations/) the list of possible initializations. Also, [here](http://keras.io/activations/) are the possible activations.
 
 Remember I mentioned that Keras used Theano? well, you just went through it. Creating the `model`and `optimizer` instances as well as adding layers is all about creating Theano variables and explaining how they depend on each other. Then the compilation time is simply about declaring an undercover Theano function. This is why this step can be a little long. The more complex your model, the longer (captain here).
@@ -217,4 +217,4 @@ model, losses = fkm.run_network(data=data)
 
 ```
 
-Using an Intel i7 CPU at 3.5GHz and an NVidia GTX 970 GPU, we achieve 0.9847 accuracy (1.53% error) in 56.6 seconds of training using this implementation. 
+Using an Intel i7 CPU at 3.5GHz and an NVidia GTX 970 GPU, we achieve 0.9847 accuracy (1.53% error) in 56.6 seconds of training using this implementation (including loading and compilation). 
