@@ -44,7 +44,7 @@ from keras.datasets import mnist
 * `np_utils` is a set of helper functions, we will only use [`to_categorical`](https://github.com/fchollet/keras/blob/master/keras/utils/np_utils.py) which i'll describe later on.
 * `callbacks` is quite transparent, it is a customizable class that triggers functions on [events](http://keras.io/callbacks/#usage-of-callbacks). 
 * `models` is the core of Keras's neural networks implementation. It is the object that represents the network : it will have layers, activations and so on. It is the object that will be 'trained' and 'tested'. `Sequetial` means we will use a 'layered' model, not a graphical one. 
-* `layers` are the objects we stack on the `model`. There is a couple ways of using them, either include the `dropout` and `activation` parameters in the `
+* `layers` are the objects we stack on the `model`. There are a couple ways of using them, either include the `dropout` and `activation` parameters in the `
 Dense` layer, or treat them as `layers` that will apply to the `model`'s last 'real' layer. 
 * `optimizers` are the optimization algorithms such as the classic [Stochastic Gradient Descent](http://keras.io/optimizers/#sgd). We will use `RMSprop` (see [here](https://www.youtube.com/watch?v=O3sxAc4hxZU) G. Hinton's explanatory video and [there](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) the slides) 
 * `datasets` (in our case) will download the mnist dataset if it is not already in `~/.keras/datasets/` and load it into `numpy` arrays. 
@@ -107,10 +107,10 @@ def init_model():
     model = Sequential()
     model.add(Dense(500, input_dim=784))
     model.add(Activation('relu'))
-    model.add(Dropout(0.3))
+    model.add(Dropout(0.4))
     model.add(Dense(300))
     model.add(Activation('relu'))
-    model.add(Dropout(0.3))
+    model.add(Dropout(0.4))
     model.add(Dense(10))
     model.add(Activation('softmax'))
 
@@ -139,7 +139,7 @@ And yes, that's it about Theano. Told you you did not need much!
 ### Training the network
 
 ```python
-def run_network(data=None, model=None, epochs=10, batch=128):
+def run_network(data=None, model=None, epochs=20, batch=256):
     try:
         start_time = time.time()
         if data is None:
@@ -167,6 +167,7 @@ def run_network(data=None, model=None, epochs=10, batch=128):
         print ' KeyboardInterrupt'
         return model, history.losses
 ```
+        
 The `try/except` is there so that you can stop the network's training without losing it.
 
 With Keras, training your network is a piece of cake: all you have to do is call `fit` on your model and provide the data. 
@@ -215,3 +216,5 @@ reload(fkm)
 model, losses = fkm.run_network(data=data)
 
 ```
+
+Using an Intel i7 CPU at 3.5GHz and an NVidia GTX 970 GPU, we achieve 0.9847 accuracy (1.53% error) in 56.6 seconds of training using this implementation. 

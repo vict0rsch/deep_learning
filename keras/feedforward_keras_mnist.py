@@ -44,10 +44,10 @@ def init_model():
     model = Sequential()
     model.add(Dense(500, input_dim=784))
     model.add(Activation('relu'))
-    model.add(Dropout(0.3))
+    model.add(Dropout(0.4))
     model.add(Dense(300))
     model.add(Activation('relu'))
-    model.add(Dropout(0.3))
+    model.add(Dropout(0.4))
     model.add(Dense(10))
     model.add(Activation('softmax'))
 
@@ -57,7 +57,7 @@ def init_model():
     return model
 
 
-def run_network(data=None, model=None, epochs=10, batch=128):
+def run_network(data=None, model=None, epochs=20, batch=256):
     try:
         start_time = time.time()
         if data is None:
