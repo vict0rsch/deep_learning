@@ -36,7 +36,7 @@ Repository Structure
 
 * **Readme.md** -> present file (I know you knew)
 
-* **[License](license)** -> GPL v2 ([choose a licence](http://choosealicense.com/))
+* **[License](LICENSE)** -> GPL v2 ([choose a licence](http://choosealicense.com/))
 
 	> The GPL (V2 or V3) is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms. V3 is similar to V2, but further restricts use in hardware that forbids software alterations.
 
