@@ -8,7 +8,7 @@ This section will walk you through the code of `feedforward_keras_mnist.py`. Thi
 
 If you are not yet familiar with what mnist is, please spend a couple minutes [there](http://yann.lecun.com/exdb/mnist/). It is basically a set of hadwritten digit images of size 28*28 (= 784) in greyscale (0-255). There are 60,000 training examples and 10,000 testing examples. The training examples could be also split into 50,000 training examples and 10,000 validation examples.
 
-By the way, Keras's documentation is better and better (and it's already good) and the community answers fast to questions or implementation problems.
+By the way, Keras's documentation is better and better (and it's already good) and the [community](https://groups.google.com/forum/#!forum/keras-users) answers fast to questions or implementation problems.
 
 ####[Keras Documentation](http://keras.io/)
 ####[Keras's Github](https://github.com/fchollet/keras)

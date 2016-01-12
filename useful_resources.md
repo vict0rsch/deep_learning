@@ -13,7 +13,7 @@ Starting with (Deep) Learning
 	
 2. **<https://www.coursera.org/learn/machine-learning>** Here is [Andrew Ng](http://www.andrewng.org/)'s most famous MOOC on Coursera. Again, this is a "*start-from-scratch*" ressource, it needs little maths and is easy going with coding.  The point here is to teach about **machine learnin**g in general, amongst which stand neural networks. It uses [Octave](https://www.gnu.org/software/octave/) (free version of Matlab) which is a downside for me *vs* Python but this is not important if you're just starting and if you're not you can always do it in Python anyway. 
 
-3. **<http://neuralnetworksanddeeplearning.com/>** This is a **_goldmine_** to start with Deep Learning and understand neural networks. It starts from scratch, and takes you through the **backpropagation** algorithm, **regularization**, tips to train your networks etc. up to explaining **convolutional** networks and introducing recurrent ones. It needs very little maths and uses a simple Python code to wallk you through the **implementation** of feedforward and convolutional neural nets.
+3. **<http://neuralnetworksanddeeplearning.com/>** This is a **_[goldmine](https://www.google.fr/search?q=goldmine&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjetPXx-qPKAhUHnBoKHZorD_EQ_AUIBygB&biw=1280&bih=678)_** to start with Deep Learning and understand neural networks. It starts from scratch, and takes you through the **backpropagation** algorithm, **regularization**, tips to train your networks etc. up to explaining **convolutional** networks and introducing recurrent ones. It needs very little maths and uses a simple Python code to wallk you through the **implementation** of feedforward and convolutional neural nets.
 
 	_This is where I started with Deep Learning and I want to **thank [M. Nielsen](http://michaelnielsen.org/)** for his very informative and pedagogical work._
 	
@@ -102,6 +102,12 @@ obtaining state-of-the-art results on many benchmark data sets.
 Other
 ---
 1. **<http://cs.stanford.edu/people/karpathy/convnetjs/demo/mnist.html>** run convolutional neural networks in your browser using JavaScript (by [@Karpathy](https://github.com/karpathy))
+
+2. **<http://timdettmers.com/>** Is Tim Demetters's blog with really interesting posts, mainly about using the GPU with neural networks:
+	*  [Which GPU(s) to Get for Deep Learning]((http://timdettmers.com/2014/08/14/which-gpu-for-deep-learning/)): My Experience and Advice for Using GPUs in Deep Learning
+	*  How to Parallelize Deep Learning on GPUs [Part 1/2: Data Parallelism](http://timdettmers.com/2014/10/09/deep-learning-data-parallelism/) & [Part 2/2: Model Parallelism](http://timdettmers.com/2014/11/09/model-parallelism-deep-learning/)
+	*  [The Brain vs Deep Learning Part I](http://timdettmers.com/2015/07/27/brain-vs-deep-learning-singularity/): Computational Complexity — Or Why the Singularity Is Nowhere Near
+	*  See also his introduction to Deep Learning on Nvidia's website [Part 1](http://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-history-training/) & [Part 2](http://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-core-concepts/)
 
 
 Reading lists
