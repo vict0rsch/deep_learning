@@ -71,5 +71,5 @@ Repository Structure
 [resources-image]: http://s22.postimg.org/6alksj4t9/idea14.png
 [lasagne-image]: http://s24.postimg.org/5sotgm269/stack13.png
 [keras-image]: http://s12.postimg.org/xvsdbaepl/unicorn.png
-[setup-image]:http://s2.postimg.org/hgrwawlid/three115.png
-[time-image]:http://s11.postimg.org/41czncg67/reload9.png
+[setup-image]: http://s2.postimg.org/hgrwawlid/three115.png
+[time-image]: http://s22.postimg.org/y0v2jhcf1/clock164.png
