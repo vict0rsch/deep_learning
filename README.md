@@ -46,7 +46,7 @@ Repository Structure
 	> Linux, Git, and WordPress use the GPL. 
 * **[theano.md](theano.md)** -> A short introduction to Theano with the minimum required to go on with Lasagne and Keras. 
 
-*  **[useful_resources.md](useful_ressources.md)** -> a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.
+*  **[useful_resources.md](useful_resources.md)** -> a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.
 
 * **[keras](keras)** -> repository containing the tutorial about... Keras. Yep. 
 
