@@ -19,7 +19,7 @@ See the official Theano tutorial [here](http://deeplearning.net/software/theano/
 **/ ! \\** No Theano = No Lasagne
 
 | Set up  | Theano   | Keras | Lasagne | Resources | Lose Time |
-|---------|----------|-------|---------|-----------|-----------|
+|:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|
 |[![i1][setup-image]](setting_up.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i5][resources-image]](useful_resources.md) | [![i6][time-image]](http://9gag.com/)|
 
 Installations
