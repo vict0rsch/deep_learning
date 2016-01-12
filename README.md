@@ -1,7 +1,7 @@
 # Deep-Learning
 
 
-How to use
+Presentation
 ---
 
 This repository contains Deep Learning *implementations* tutorials. For more general knowledge regarding Machine/Deep Learning, have a look at **[useful_resources.md](useful_resources.md)**. 
@@ -19,6 +19,23 @@ See the official Theano tutorial [here](http://deeplearning.net/software/theano/
 | Set up  | Theano   | Keras | Lasagne | Resources | Lose Time |
 |:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|
 |[![i1][setup-image]](setup.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i5][resources-image]](useful_resources.md) | [![i6][time-image]](http://9gag.com/)|
+
+How to use
+---
+1. Learn about Machine Learning -> Resources -> [Resources](useful_resources.md#starting-with-deep-learning)
+
+
+2. Learn about Deep Learning Theory and feedforward networks (your best bet may very well be M. Nielsen's blog)  -> [Resources](useful_resources.md#starting-with-deep-learning)
+
+3. Get familiar with Theano -> [Theano](theano.md)
+
+4. Get into some code 
+	* Start easy with Keras -> [Keras](keras)  
+	* Go into the details with Lasagne -> [Lasagne](lasagne)
+
+5. Dig into Recurrent Networks -> [Resources](useful_resources.md#on-recurrent-neural-networks)
+
+6. Get back to code -> *[on the way]*
 
 Repository Structure
 ---
