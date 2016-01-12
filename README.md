@@ -17,6 +17,8 @@ We concentrate, in [theano.md](https://github.com/Vict0rSch/Deep-Learning/blob/m
 
 See the official Theano tutorial [here](http://deeplearning.net/software/theano/tutorial/).
 
+**/ ! \\** No Theano = No Lasagne
+
 
 Installations
 ---
@@ -51,3 +53,5 @@ Repository Structure
 	* **[feedforward\_keras\_mnist.py](keras/feedforward_keras_mnist.py)** -> code to implement a feedforward (dense) neural network trained on mnist using keras.
 	
 * **[lasagne](lasagne)** repository containing the tutorial about... Lasagne. Yep. Again.
+	* **[readme.md](lasagne/readme.md)** -> idem as Keras
+	* **[feedforward\_lasagne\_mnist.py](lasagne/feedforward_lasagne_mnist.py)** -> idem also.

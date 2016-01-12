@@ -22,7 +22,7 @@ Lasagne is much more "*hands on*" than Keras. This means the Lasagne Library is 
 
 First we **import** everything we'll need (as usual). Then we define a **loading** function `load_data()` which we will not look at in details since all that matters is that it returns the expected data. 
 
-The we define two other helper functions: one to build the network itself (`build_mlp`), the other to generate the mini-batches from the loaded data (`iterate_minibatches()`).
+Then we define two other helper functions: one to build the network itself (`build_mlp()`), the other to generate the mini-batches from the loaded data (`iterate_minibatches()`).
 
  The main function is `run_network()`. It does everything you expect from it: load the data, build the model/network, compile the needed Theano functions, train the network and lastly test it. 
  
@@ -31,18 +31,18 @@ The we define two other helper functions: one to build the network itself (`buil
  
 ## Imports
 
-* `sys`, `os`, `time` and `numpy` don not need explanations. 
+* `sys`, `os`, `time` and `numpy` do not need explanations. 
 * We import `theano`and `theano.tensor` because we'll use Theano variables and a few of it's built-in functions. 
-* Then, we import `lasagne` library as a whole
+* Then, we import the `lasagne` library as a whole
 * `rmsprop` is the optimizer we'll use, just like in the Keras example. We use it mainly because it is one of the algorithm that scale the learning rate according to the gradient. To learn more see [here](https://www.youtube.com/watch?v=O3sxAc4hxZU) G. Hinton's explanatory video and [there](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) the slides 
-* Just like in keras `layers` are the core of the networks. Here we'll only use `Dense` and `Dropout` layers. The `InputLayer` is a specific `DenseLayer` that takes in the data to be forwarded in the network. 
+* Just like in Keras, `layers` are the core of the networks. Here we'll only use `Dense` and `Dropout` layers. The `InputLayer` is a specific `layer` that takes in the data to be forwarded in the network. 
 * Again, we'll use the `softmax` and rectified linear unit (`rectify`) activation functions 
 * Last but not least, the cost/loss/objective function is a `categorical_crossentropy` 
 
 ## Loading the data
 We will not get into the details of this function, since the only important thing to understand is what it returns. You could load the data another way if you do not want to re-download the mnist dataset. For instance you could use the one you downloaded doing the Keras example.
 
-`loading_data()` returns numpy `ndarrays` with shapes:
+`loading_data()` returns numpy `ndarrays` of `numpy.float32` values with shapes:
 
 ```python
 X_train.shape = (50000, 1, 28, 28)
@@ -55,7 +55,9 @@ X_test.shape = (10000, 1, 28, 28)
 y_test.shape = (10000,)
 
 ```
-For examples, the dimensions are as follows : `(nb_of_examples, nb_of_channels, image_first_dimension, image_second_dimension)`. this means if you had colored images in `rgb` you'd have a `3` instead of a `1` in the `number_of_channels`. Also if we reshaped the images like in the Keras example to have vector-like inputs, we'd have `784, 1` instead of `28, 28` as image dimension.
+For the inputs (`X`), the dimensions are as follows : `(nb_of_examples, nb_of_channels, image_first_dimension, image_second_dimension)`. This means if you had colored images in `rgb` you'd have a `3` instead of a `1` in the `number_of_channels`. Also if we reshaped the images like in the Keras example to have vector-like inputs, we'd have `784, 1` instead of `28, 28` as image dimension.
+
+The targets are `ndarrays` with one dimension, filled with the labels as `numpy.uint8` values. 
 
 ## Creating the network
 
@@ -81,14 +83,14 @@ def build_mlp(input_var=None):
     return l_out 
 ```
 
-Here we stack layers to build a network. Each `layer` takes as argument the previous `layers`. This is how Theano works: one step at a time, we define how variables depend on each other. Basically we say: the input layer will be modified as follows by this layer. The next layer will do the same etc. So the whole network is contained in the `l_out` object which is an instance of `lasagne.layers.dense.DenseLayer` and is basically a Theano expression that depends only on the `input_var`.
+Here we stack layers to build a network. Each `layer` takes as argument the previous `layer`. This is how Theano works: one step at a time, we define how variables depend on each other. Basically we say: the input layer will be modified as follows by the first hidden layer. The next layer will do the same etc. So the whole network is contained in the `l_out` object, which is an instance of `lasagne.layers.dense.DenseLayer` and is basically a Theano expression that depends only on the `input_var`.
 
-To summarize, this function takes a Theano Variable as input and says how the **forward** pass in our network affects this variable.  
+**To summarize**, this function takes a Theano Variable as input and says how the **forward** pass in our network affects this variable.  
 
 
 The network in question is as follows:
 
-* The `InputLayer` expects 4-dimentional inputs with  shapes `(None, 1, 28 ,28)`. The `None` mean the number of example to pass forward is not fixed and the network is not fixed at a specific batch size. 
+* The `InputLayer` expects 4-dimentional inputs with  shapes `(None, 1, 28 ,28)`. The `None` means the number of example to pass forward is not fixed and the network is can take any batch size. 
 * The first hidden layer is has 500 units, [rectified linear unit](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#theano.tensor.nnet.relu) activation function and 40% of dropout (`l_hid1_drop `). Weights and Biases are initialized according to the [`GlorotUniform()`](http://lasagne.readthedocs.org/en/stable/modules/init.html#lasagne.init.Glorot) distribution (which is default).
 * The second hidden layer has 300 units, rectified linear unit activation function and 40% of dropout and same initialization.
 * The output layer has 10 units (because we have 10 categories / labels in mnist), no dropout (of course...) and a [softmax](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#tensor.nnet.softmax) activation function to output a probability. `softmax` output + `categorical_crossentropy` is standard for multiclass classification. 
@@ -113,7 +115,7 @@ Again, we won't dive into the Python code since it's just a helper function, rat
 
 This function takes data (`input` and `target`) as input and generates (random) subsets of this data (of length `batchsize`). The point here is to iterate over the datasets without reloading them in memory each time we start with a new batch. [Understand python's `yield` and generators](http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python).
 
-The point here is to generate (mini)batches to learn from (either to train, validate or test the model/network).
+The point here is to generate batches to learn from (either to train, validate or test the model/network).
 
 ## Running the network
 
@@ -130,7 +132,7 @@ Another way to see it is that you use the *validation* data to check that your n
 ```python
 if data is None:
         X_train, y_train, X_val, y_val, X_test, y_test = load_dataset()
-    else:
+else:
         X_train, y_train, X_val, y_val, X_test, y_test = data
 ```
 Because you may not want to reload the whole dataset each time you modify your network, you can optionnaly pass data as an argument to `run_network()`
