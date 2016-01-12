@@ -30,6 +30,9 @@ Repository Structure
 	> The GPL (V2 or V3) is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms. V3 is similar to V2, but further restricts use in hardware that forbids software alterations.
 
 	> Linux, Git, and WordPress use the GPL. 
+
+* **[setup.md](setup.md)** -> Links and sketchy guide to install frameworks
+
 * **[theano.md](theano.md)** -> A short introduction to Theano with the minimum required to go on with Lasagne and Keras. 
 
 *  **[useful_resources.md](useful_resources.md)** -> a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.
