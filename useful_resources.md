@@ -44,7 +44,7 @@ General Deep Learning papers and books
 4. **[Practical Recommendations for Gradient-Based Training of Deep
 Architectures](http://arxiv.org/pdf/1206.5533v2.pdf)** by Y. Bengio (2012).
 
-	>Learning algorithms related to artificial neural networks and in particular for Deep Learning may seem to involve many bells and whistles, called hyperparameters. This chapter is meant as a practical guide with recommendations for some of the most commonly used hyper-parameters, in particular in the context of learning algorithms based on backpropagated gradient and gradient-based optimization. It also discusses how to deal with the fact that more interesting results can be obtained when allowing one to adjust many hyper-parameters. Overall, it describes elements of the practice used to successfully and efficiently train and debug large-scale and often deep multi-layer neural networks. It closes with open questions about the training difficulties observed with deeper architectures.
+	>Learning algorithms related to artificial neural networks and in particular for Deep Learning may seem to involve many bells and whistles, called hyperparameters. **This chapter is meant as a practical guide with recommendations for some of the most commonly used hyper-parameters, in particular in the context of learning algorithms based on backpropagated gradient and gradient-based optimization**. It also discusses how to deal with the fact that more interesting results can be obtained when allowing one to adjust many hyper-parameters. Overall, it describes elements of the practice used to successfully and efficiently train and debug large-scale and often deep multi-layer neural networks. It closes with open questions about the training difficulties observed with deeper architectures.
 	
 5. **[Random Search for Hyper-Parameter Optimization](http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf)** in *Journal of Machine Learning Research* by J. Bergstra and Y. Bengio (2012)
 
@@ -56,10 +56,10 @@ and deep belief networks. Compared with neural networks configured by a pure gri
 we find that random search over the same domain is able to find models that are as good or better
 within a small fraction of the computation time. Granting random search the same computational
 budget, random search finds better models by effectively searching a larger, less promising con-
-figuration space. Compared with deep belief networks configured by a thoughtful combination of
+figuration space. **Compared with deep belief networks configured by a thoughtful combination of
 manual search and grid search, purely random search over the same 32-dimensional configuration
 space found statistically equal performance on four of seven data sets, and superior performance
-on one of seven. [...]
+on one of seven.** [...]
 
 6. **[Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification](http://arxiv.org/pdf/1502.01852v1.pdf)** by K. He, X. Zhang, S. Ren and J. Sun (2015)
 
@@ -68,12 +68,12 @@ state-of-the-art neural networks. In this work, we study
 rectifier neural networks for image classification from two
 aspects. First, we propose a Parametric Rectified Linear
 Unit (PReLU) that generalizes the traditional rectified unit.
-PReLU improves model fitting with nearly zero extra computational
+**PReLU improves model fitting with nearly zero extra computational
 cost and little overfitting risk. Second, we derive
 a robust initialization method that particularly considers
 the rectifier nonlinearities. This method enables us to
 train extremely deep rectified models directly from scratch
-and to investigate deeper or wider network architectures.
+and to investigate deeper or wider network architectures.**
 Based on our PReLU networks (PReLU-nets), we achieve
 4.94% top-5 test error on the ImageNet 2012 classification
 dataset. This is a 26% relative improvement over the
@@ -90,14 +90,82 @@ The key idea is to randomly drop units (along with their connections) from the n
 network during training. This prevents units from co-adapting too much. During training,
 dropout samples from an exponential number of different “thinned” networks. At test time,
 it is easy to approximate the effect of averaging the predictions of all these thinned networks
-by simply using a single unthinned network that has smaller weights. This significantly
+by simply using a single unthinned network that has smaller weights. This **significantly
 reduces overfitting and gives major improvements over other regularization methods. We
 show that dropout improves the performance of neural networks on supervised learning
-tasks in vision, speech recognition, document classification and computational biology,
+tasks** in vision, speech recognition, document classification and computational biology,
 obtaining state-of-the-art results on many benchmark data sets.
 
 8. **[Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](http://arxiv.org/pdf/1502.03167v3.pdf)** by S. Ioffe and C. Szegedy (2015)
-	>Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout. Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.9% top-5 validation error (and 4.8% test error), exceeding the accuracy of human raters.
+	>Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout. **Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin**. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.9% top-5 validation error (and 4.8% test error), exceeding the accuracy of human raters.
+	
+
+On Recurrent Neural Networks
+---
+
+1. Check out A. Karpathy's famous blog post on **[The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)**
+
+2. [Nando de Freitas](http://www.cs.ubc.ca/~nando/)'s 50min video from his Oxford class is a really good introduction to RNNs and LSTMs, from the vanishing gradient problem to the LSTM Torch code  : **[Deep Learning Lecture 12: Recurrent Neural Nets and LSTMs](https://www.youtube.com/watch?v=56TYLaQN4N8&index=1&list=PL0NrLl_3fZQ0E5mJJisEP6ZQvHVHZd5b_)**
+
+3. Also to get a clearer understanding of how LSTMs work, see this nice blog post by Chris Olah : **[Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)**
+
+1. **[A Critical Review of Recurrent Neural Networksfor Sequence Learning](http://arxiv.org/pdf/1506.00019v4.pdf)** by Z. Lipton, J. Berkowitz and C. Elkan (2015)
+
+	> [...]Recurrent neural networks (RNNs) are connectionist
+models that capture the dynamics of sequences via cycles in the
+network of nodes. Unlike standard feedforward neural networks, recurrent
+networks retain a state that can represent information from an arbitrarily
+long context window. Although recurrent neural networks have traditionally
+been difficult to train, and often contain millions of parameters, recent
+advances in network architectures, optimization techniques, and parallel
+computation have enabled successful large-scale learning with them.
+In recent years, systems based on long short-term memory (LSTM) and
+bidirectional (BRNN) architectures have demonstrated ground-breaking
+performance on tasks as varied as image captioning, language translation,
+and handwriting recognition. In this survey, we review and synthesize
+the research that over the past three decades first yielded and then made
+practical these powerful learning models. When appropriate, we reconcile
+conflicting notation and nomenclature. **Our goal is to provide a selfcontained
+explication of the state of the art together with a historical
+perspective and references to primary research**.
+
+2. **[An Empirical Exploration of Recurrent Network Architectures](http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)** in *Proceedings of the 32nd International Conference on Machine
+Learning* by R. Jozefowicz, W. Zaremba and I. Sutskever (2015)
+
+	>The Recurrent Neural Network (RNN) is an extremely
+powerful sequence model that is often
+difficult to train. The Long Short-Term Memory
+(LSTM) is a specific RNN architecture whose
+design makes it much easier to train. While
+wildly successful in practice, the LSTM’s architecture
+appears to be ad-hoc so it is not clear if it
+is optimal, and the significance of its individual
+components is unclear.
+In this work, we aim to determine whether the
+LSTM architecture is optimal or whether much
+better architectures exist. We conducted a thorough
+architecture search where we evaluated
+over ten thousand different RNN architectures,
+and **identified an architecture that outperforms
+both the LSTM and the recently-introduced
+Gated Recurrent Unit (GRU) on some but not all
+tasks. We found that adding a bias of 1 to the
+LSTM’s forget gate closes the gap between the
+LSTM and the GRU**
+
+3. **[Recurrent Neural Network Regularization](http://arxiv.org/pdf/1409.2329v5.pdf)** *(Under review as a conference paper at ICLR 2015)*	by W. Zaremba, I. Sutskever and O. Vinyals (2015)
+	
+	>We present a simple regularization technique for Recurrent Neural Networks
+(RNNs) with Long Short-Term Memory (LSTM) units. Dropout, the most successful
+technique for regularizing neural networks, does not work well with RNNs
+and LSTMs. In this paper, we show **how to correctly apply dropout to LSTMs,
+and show that it substantially reduces overfitting on a variety of tasks.** These tasks
+include language modeling, speech recognition, image caption generation, and
+machine translation.
+
+4. **[Sequence to sequence learning with neural networks](http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf)** *(NIPS)* by I. Sutskever, O. Vinyals and Q. Le (2014). Check out I. Sutskever's presentation [video](http://research.microsoft.com/apps/video/?id=239083) on this paper and his [website](https://www.cs.toronto.edu/~ilya/pubs/) for more.
+
+	>Deep Neural Networks (DNNs) are powerful models that have achieved excel- lent performance on difficult learning tasks. Although DNNs work well whenever large labeled training sets are available, they cannot be used to map sequences to sequences. In this paper, we present a general end-to-end approach to sequence learning that makes minimal assumptions on the sequence structure. Our method uses amultilayered Long Short-TermMemory (LSTM) tomap the input sequence to a vector of a fixed dimensionality, and then another deep LSTM to decode the target sequence from the vector. Our main result is that on an English to French translation task from the WMT-14 dataset, the translations produced by the LSTM achieve a BLEU score of 34.8 on the entire test set, where the LSTM’s BLEU score was penalized on out-of-vocabulary words. Additionally, the LSTM did not have difficulty on long sentences. For comparison, a phrase-based SMT system achieves a BLEU score of 33.3 on the same dataset. When we used the LSTM to rerank the 1000 hypotheses produced by the aforementioned SMT system, its BLEU score increases to 36.5, which is close to the previous state of the art. The LSTM also learned sensible phrase and sentence representations that are sensitive to word order and are relatively invariant to the active and the passive voice. Fi- nally, we found that reversing the order of the words in all source sentences (but not target sentences) improved the LSTM’s performancemarkedly, because doing so introduced many short term dependencies between the source and the target sentence which made the optimization problem easier.
 
 Other
 ---

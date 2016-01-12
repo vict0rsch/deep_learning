@@ -16,26 +16,9 @@ We concentrate, in [theano.md](https://github.com/Vict0rSch/Deep-Learning/blob/m
 
 See the official Theano tutorial [here](http://deeplearning.net/software/theano/tutorial/).
 
-**/ ! \\** No Theano = No Lasagne
-
 | Set up  | Theano   | Keras | Lasagne | Resources | Lose Time |
 |:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|
-|[![i1][setup-image]](setting_up.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i5][resources-image]](useful_resources.md) | [![i6][time-image]](http://9gag.com/)|
-
-Installations
----
-
-It may seem obvious but do install Theano before Kearas and/or Lasagne. Also if you have a Nvidia GPU to use for calculation, be sure to install all the required [CUDA](http://www.nvidia.fr/object/cuda-parallel-computing-fr.html) dependencies.
-
-### Theano
-<http://deeplearning.net/software/theano/install.html#install>
-
-### Lasagne
-<http://lasagne.readthedocs.org/en/stable/user/installation.html>
-
-### Keras
-<http://keras.io/#installation>  
-Keras can use either Theano or Google's Tensorflow as a processing backend. I have not tried Tensorflow so everything I say might or not be portable to the Tensorflow backend. My feeling is that it is. 
+|[![i1][setup-image]](setup.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i5][resources-image]](useful_resources.md) | [![i6][time-image]](http://9gag.com/)|
 
 Repository Structure
 ---

@@ -74,7 +74,7 @@ array([[ 0.5       ,  0.73105858],
        [ 0.26894142,  0.11920292]])
 ```
 
-So here we declare a Theano variable `x`. Then we define another variable, `sigmoid`, as an expression of `x`. We then declare the Theano function `logistic`, that compiles ond optimizes the execution graph linking `sigmoid` and `x`. Finaly we give `logistic` a numerical application using `example`.
+So here we declare a Theano variable `x`. Then we define another variable, `sigmoid`, as an expression of `x`. We then declare the Theano function `logistic`, that compiles and optimizes the execution graph linking `sigmoid` and `x`. Finaly we give `logistic` a numerical application using `example`.
 
 Theano functions are way richer thant that so I suggest you go and look at least into **[Params](http://deeplearning.net/software/theano/tutorial/examples.html#setting-a-default-value-for-an-argument)**, **[Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)** and  **Updates** (4th paragraph in [Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)) (not knowing about Shared Variables is missing a huge part of how Theano works and they are needed for Lasagne).
 
@@ -90,5 +90,7 @@ As seen before, there are variables and shared variables in Theano. Also, Theano
 ### Warning
 Debugging Theano errors can be quite difficult. I suggest you go through [this](http://deeplearning.net/software/theano/tutorial/debug_faq.html) if you have troubles. 
 
-Also, if you do not understand why printing your variables with standard `print` does not help, you are not ready to go on with Theano (but who said Keras needed that much Theano?).
+You can set `exception_verbosity = high` in your `~/.theanorc` file, but it can make the errors *really* verbose.
+
+Also, if you do not understand why printing your variables to check their values with standard `print` does not help, you are not ready to go on with Theano (but who said Keras needed that much Theano?).
 
