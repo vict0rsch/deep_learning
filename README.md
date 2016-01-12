@@ -17,8 +17,12 @@ We concentrate, in [theano.md](https://github.com/Vict0rSch/Deep-Learning/blob/m
 See the official Theano tutorial [here](http://deeplearning.net/software/theano/tutorial/).
 
 **/ ! \\** No Theano = No Lasagne
+<center>
 
-
+| Theano  | Keras   | Lasagne  | Resources   | Setting up |
+|--------------------------------|---------------------------|-------------------------------|---------------------------------------------|-----------|
+|[![i1][theano-image]](theano.md)|[![i2][keras-image]](keras)|[![i3][lasagne-image]](lasagne)|[![i4][resources-image]](useful_resources.md)|[![i5][setup-image]](setting_up.md) |
+</center>
 Installations
 ---
 
@@ -56,3 +60,16 @@ Repository Structure
 * **[lasagne](lasagne)** repository containing the tutorial about... Lasagne. Yep. Again.
 	* **[readme.md](lasagne/readme.md)** -> idem as Keras
 	* **[feedforward\_lasagne\_mnist.py](lasagne/feedforward_lasagne_mnist.py)** -> idem also.
+
+<br>
+<br> 
+
+<sub>Icons made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+	
+	
+	
+[theano-image]: http://s18.postimg.org/cuim8chtx/four56.png
+[resources-image]: http://s22.postimg.org/6alksj4t9/idea14.png
+[lasagne-image]: http://s24.postimg.org/5sotgm269/stack13.png
+[keras-image]: http://s12.postimg.org/xvsdbaepl/unicorn.png
+[setup-image]:http://s2.postimg.org/hgrwawlid/three115.png
