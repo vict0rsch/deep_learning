@@ -17,12 +17,13 @@ We concentrate, in [theano.md](https://github.com/Vict0rSch/Deep-Learning/blob/m
 See the official Theano tutorial [here](http://deeplearning.net/software/theano/tutorial/).
 
 **/ ! \\** No Theano = No Lasagne
-<div style="text-align:center">
+<div align=center>
 
-| Theano  | Keras   | Lasagne  | Resources   | Setting up |
+| Set up  | Keras   | Lasagne  | Resources   | Theano |
 |--------------------------------|---------------------------|-------------------------------|---------------------------------------------|-----------|
-|[![i1][theano-image]](theano.md)|[![i2][keras-image]](keras)|[![i3][lasagne-image]](lasagne)|[![i4][resources-image]](useful_resources.md)|[![i5][setup-image]](setting_up.md) |
+|[![i1][setup-image]](setting_up.md)|[![i2][keras-image]](keras)|[![i3][lasagne-image]](lasagne)|[![i4][resources-image]](useful_resources.md)|[![i5][theano-image]](theano.md) |
 </div>
+
 Installations
 ---
 
