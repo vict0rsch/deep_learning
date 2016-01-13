@@ -16,9 +16,9 @@ We concentrate, in [theano.md](https://github.com/Vict0rSch/Deep-Learning/blob/m
 
 See the official Theano tutorial [here](http://deeplearning.net/software/theano/tutorial/).
 
-| Set up  | Theano   | Keras | Lasagne | Resources | Lose Time |
-|:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|
-|[![i1][setup-image]](setup.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i5][resources-image]](useful_resources.md) | [![i6][time-image]](http://9gag.com/)|
+| Set up  | Theano   | Keras | Lasagne |Recurrent| Resources | Lose Time |
+|:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|:--------:|
+|[![i1][setup-image]](setup.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i6][recurrent-image]](recurrent.md)| [![i5][resources-image]](useful_resources.md) |[![i6][time-image]](http://9gag.com/)|
 
 How to use
 ---
@@ -35,7 +35,9 @@ How to use
 
 5. Dig into Recurrent Networks -> [Resources](useful_resources.md#on-recurrent-neural-networks)
 
-6. Get back to code -> *[on the way]*
+6. Spend some time understanding the handling of dimensions in recurrent nets -> [Recurrent](recurrent.md)
+
+7. Get back to code -> *[on the way]*
 
 Repository Structure
 ---
@@ -89,3 +91,5 @@ Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to
 [keras-image]: http://s12.postimg.org/xvsdbaepl/unicorn.png
 [setup-image]: http://s2.postimg.org/hgrwawlid/three115.png
 [time-image]: http://s22.postimg.org/y0v2jhcf1/clock164.png
+[recurrent-image]: http://s12.postimg.org/fdm1mirux/graph16.png
+
