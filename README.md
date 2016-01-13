@@ -66,10 +66,7 @@ Repository Structure
 	* **[feedforward\_lasagne\_mnist\_tutorial.md](lasagne/feedforward_lasagne_mnist_tutorial.md)**
 	* **[feedforward\_lasagne\_mnist.py](lasagne/feedforward_lasagne_mnist.py)**
 	* **[recurrent\_lasagne.md](lasagne/recurrent_lasagne.md)**
-<br>
-<br> 
 
-<sub>Icons made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
 
 
 The Toothbrush Technique
@@ -80,7 +77,10 @@ The thing is that debugging can be hard and the error might very well be silly. 
 On the other hand, explaining it to your toothbrush makes you rethink the whole coding process you went through and hopefully find that (silly?) mistake or incoherence. 
 
 Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to learn more.
-	
+
+<br> 
+
+<sub>Icons made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
 	
 	
 [theano-image]: http://s18.postimg.org/cuim8chtx/four56.png

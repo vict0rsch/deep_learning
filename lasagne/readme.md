@@ -1,7 +1,7 @@
 # Lasagne Tutorials : Feedforward or Recurrent?
 
 
-[![i1][feedforward]](feedforward_keras_mnist_tutorial.md)[![i2][recurrent]](recurrend_lasagne.md)
+[![i1][feedforward]](feedforward_lasagne_mnist_tutorial.md)[![i2][recurrent]](recurrent_lasagne.md)
 
 
 (chose left or right wisely)
