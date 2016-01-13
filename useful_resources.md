@@ -9,7 +9,7 @@ Resources can be either research papers, explanatory website or even a well-writ
 Starting with (Deep) Learning
 ----
 
-1. **<http://www.r2d3.us/>** A **beginner's** introduction to **machine learning** (with decision trees), how it works and what is at stake. The website is amazingly beautiful and didactical. If you're ehre, on *this* page, you probably won't need to read through that. But still, it's too good to miss. And worth sharing with everyone.
+1. **<http://www.r2d3.us/>** A **beginner's** introduction to **machine learning** (with decision trees), how it works and what is at stake. The website is amazingly beautiful and didactical. If you're ehre, on *this* page, you probably won't need to read through that. But still, it's too good to miss. And worth sharing with everyone. [Translations available in French, Russian and Chinese]
 	
 2. **<https://www.coursera.org/learn/machine-learning>** Here is [Andrew Ng](http://www.andrewng.org/)'s most famous MOOC on Coursera. Again, this is a "*start-from-scratch*" ressource, it needs little maths and is easy going with coding.  The point here is to teach about **machine learnin**g in general, amongst which stand neural networks. It uses [Octave](https://www.gnu.org/software/octave/) (free version of Matlab) which is a downside for me *vs* Python but this is not important if you're just starting and if you're not you can always do it in Python anyway. 
 

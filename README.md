@@ -56,12 +56,14 @@ Repository Structure
 
 * **[keras](keras)** -> repository containing the tutorial about... Keras. Yep. 
 
-	* **[readme.md](keras/readme.md)** -> code introduction and explanation to easily run a neural network able to recognize digits (mnist dataset)
+	*  **[readme.md](keras/readme.md)** -> Choose between starting with feedforward networks or get deeper, into recurrent networks. 
+	* **[feedforward\_keras\_mnist\_tutorial.md](keras/feedforward_keras_mnist_tutorial.md)** -> code introduction and explanation to easily run a neural network able to recognize digits (mnist dataset)
 	* **[feedforward\_keras\_mnist.py](keras/feedforward_keras_mnist.py)** -> code to implement a feedforward (dense) neural network trained on mnist using keras.
 	
-* **[lasagne](lasagne)** repository containing the tutorial about... Lasagne. Yep. Again.
-	* **[readme.md](lasagne/readme.md)** -> idem as Keras
-	* **[feedforward\_lasagne\_mnist.py](lasagne/feedforward_lasagne_mnist.py)** -> idem also.
+* **[lasagne](lasagne)** repository containing the tutorial about... Lasagne. Yep. Again. Repository organized as Keras's
+	* **[readme.md](lasagne/readme.md)**
+	* **[feedforward\_lasagne\_mnist\_tutorial.md](lasagne/feedforward_lasagne_mnist_tutorial.md)**
+	* **[feedforward\_lasagne\_mnist.py](lasagne/feedforward_lasagne_mnist.py)**
 
 <br>
 <br> 
