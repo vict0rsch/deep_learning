@@ -70,6 +70,16 @@ Repository Structure
 <br> 
 
 <sub>Icons made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+
+
+The Toothbrush Technique
+---
+The Toothbrush technique is used to debug code. The concept is easy: pick up your toothbrush, a pen or a spoon and walk it through your code as if they understood it. Better yet use a friend or coworker: you won't need their brain, rather their ears. 
+
+The thing is that debugging can be hard and the error might very well be silly. However looking as someone else's code is often hard and/or laborious, so asking a friend/coworker to debug it is hardly possible.  
+On the other hand, explaining it to your toothbrush makes you rethink the whole coding process you went through and hopefully find that (silly?) mistake or incoherence. 
+
+Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to learn more.
 	
 	
 	
