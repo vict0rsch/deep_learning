@@ -109,6 +109,8 @@ On Recurrent Neural Networks
 
 3. Also to get a clearer understanding of how LSTMs work, see this nice blog post by Chris Olah : **[Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)**
 
+4. Another great post by Chris Olah, on how RNNs understand and represent data in the task of Natural Language Processing. Also explains the use of **Word Embeddings**: **[Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)** 
+
 1. **[A Critical Review of Recurrent Neural Networksfor Sequence Learning](http://arxiv.org/pdf/1506.00019v4.pdf)** by Z. Lipton, J. Berkowitz and C. Elkan (2015)
 
 	> [...]Recurrent neural networks (RNNs) are connectionist
