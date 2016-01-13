@@ -1,6 +1,6 @@
 #Lasagne Tutorial
 
-This section will walk you through the code of `feedforward_lasagne_mnist.py`. This tutorial is widely based on the [Lasagne mnist example](https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py). This official example is really well built and detailed, especially the comments in the code. The purpose here is to simplify a little bit the original code, make it similar to our [Keras example](../keras/) and understand in details what is happenning, when and why. 
+This section will walk you through the code of [`feedforward_lasagne_mnist.py`](feedforward_lasagne_mnist.py), which I suggest you have open while reading. This tutorial is widely based on the [Lasagne mnist example](https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py). This official example is really well built and detailed, especially the comments in the code. The purpose here is to simplify a little bit the original code, make it similar to our [Keras example](../keras/) and understand in details what is happenning, when and why. 
 
 If you are not yet familiar with what mnist is, please spend a couple minutes [there](http://yann.lecun.com/exdb/mnist/). It is basically a set of hadwritten digit images of size 28*28 (= 784) in greyscale (0-255). There are 60,000 training examples and 10,000 testing examples. The training examples could be also split into 50,000 training examples and 10,000 validation examples.
 
@@ -8,8 +8,9 @@ By the way, Lasagne's documentation is really good, detailed and cites papers. A
 
 ####[Lasagne Documentation](http://lasagne.readthedocs.org/en/stable/index.html)
 ####[Lasagne's Github](https://github.com/Lasagne)
-Lasagne Recipes are 
+(Lasagne Recipes are 
 > Code snippets, IPython notebooks, tutorials and useful extensions are welcome here.
+)
 
 **/!\\** Be aware that Lasagne relies heavily on Theano and that understanding it is **necessary** to be able to use Lasagne. The [introduction](../theano.md) is the minimum required but knowing Theano in greater details could be a good idea...
 

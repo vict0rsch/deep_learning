@@ -1,6 +1,6 @@
 Keras Tutorial
 ---
-This section will walk you through the code of `feedforward_keras_mnist.py`. This tutorial is based on several Keras examples and from it's documentation :
+This section will walk you through the code of [`feedforward_keras_mnist.py`](feedforward_keras_mnist.py), which I suggest you have open while reading. This tutorial is based on several Keras examples and from it's documentation :
 
 * **[mnist_mlp.py example](https://github.com/fchollet/keras/blob/master/examples/mnist_mlp.py)**
 * **[mnist dataset in Keras](http://keras.io/datasets/#mnist-database-of-handwritten-digits)**
