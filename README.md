@@ -56,6 +56,8 @@ Repository Structure
 
 *  **[useful_resources.md](useful_resources.md)** -> a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.
 
+* **[recurrent.md](recurrent.md)** -> a special focus on handling your data's dimensions to feed recurrent networks
+
 * **[keras](keras)** -> repository containing the tutorial about... Keras. Yep. 
 
 	*  **[readme.md](keras/readme.md)** -> Choose between starting with feedforward networks or get deeper, into recurrent networks. 
