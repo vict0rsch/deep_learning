@@ -34,21 +34,18 @@ The other ones are just derived from it, all you need is not to store/take into 
 
 So let's get back to dimensions:
 
-* you'll feed *batch_size* examples at a time
-* each one containing *seq_len* timesteps
-* and each of this timestep being *input_dim*-dimensional. 
+* you'll feed `batch_size` examples at a time
+* each one containing `seq_len` timesteps
+* and each of this timestep being `input_features`-dimensional, that is to say your examples have `input_features` features. 
 
 Backpropagation through time
 ---
 
 Quick and simple explanation on [Wikipedia](https://en.wikipedia.org/wiki/Backpropagation_through_time#Algorithm):
 
-![bptt](https://upload.wikimedia.org/wikipedia/en/thumb/e/ee/Unfold_through_time.png/1000px-Unfold_through_time.png)
+![bptt](http://s21.postimg.org/5ypxek2vb/1000px_Unfold_through_time.png)
 
 The idea is to unfold through time the network's graph (in this example, `seq_len = 3`) and then apply the original backpropagation algorithm.
-
-Example with Keras
----
 
 Example with Lasagne
 ---
@@ -99,3 +96,48 @@ This means the input data will have 3 dimensions:
 * Batches of size `N_BATCH`
 * Sequences will be of size `MAX_LENGTH`
 * Each example - an `(a, b)` pair - is of dimension 2
+
+Which corresponds to a shape `(batch_size = N_BATCH, seq_len = MAX_LENGTH, input_features = 2)` for the input data.
+
+Example with Keras
+---
+Here we'll look at [imdb_lstm.py](https://github.com/fchollet/keras/blob/master/examples/imdb_lstm.py) and refer to the [documentation](http://keras.io/layers/embeddings/). This one is a little harder than the previous one. 
+
+What is the **task**? The aim is to classify IMDB movie reviews and say whether or not they are positive regarding the movie. To do so, we'll use Keras's "IMDB Movie reviews sentiment classification" dataset:
+>Dataset of 25,000 movies reviews from IMDB, labeled by sentiment (positive/negative). Reviews have been preprocessed, and each review is encoded as a sequence of word indexes (integers). For convenience, words are indexed by overall frequency in the dataset, so that for instance the integer "3" encodes the 3rd most frequent word in the data. 
+
+```python
+max_features = 20000
+maxlen = 100  # cut texts after this number of words (among top max_features most common words)
+batch_size = 32
+
+(X_train, y_train), (X_test, y_test) = imdb.load_data(nb_words=max_features,
+                                                      test_split=0.2)
+
+
+X_train = sequence.pad_sequences(X_train, maxlen=maxlen)
+X_test = sequence.pad_sequences(X_test, maxlen=maxlen)
+
+```
+Here we simply load the data. `X_train` is a list of reviews and `X_train[i]` is a list of words, indexed by integers.  
+There are `max_features` different words in those reviews.  
+There are 25,000 examples, split between 20,000 for training and 5,000 for testing.  
+`X_train[i]` are cut to `maxlen` so that all sequences are of the same length.
+
+
+Then how is the data input into the network? Using an `embedding` layer:
+
+```python
+model = Sequential()
+model.add(Embedding(max_features, 128, input_length=maxlen))
+model.add(LSTM(128))
+[...]
+``` 
+Look at C. Olah's [post](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/) to learn more on those embedding layers. What you need to know, indepently from the task is that these layers are built as follows:
+> `keras.layers.embeddings.Embedding(input_dim, output_dim, [...])`  
+> input_dim: int >= 0. Size of the vocabulary
+
+And their outpus have shapes
+> 3D tensor with shape: `(nb_samples, sequence_length, output_dim)`
+
+So once again what goes into the regular RNN (an LSTM layer in this case) is data of shape `(batch_size = 32, seq_len = maxlen, input_features = 128)`

@@ -16,28 +16,54 @@ We concentrate, in [theano.md](https://github.com/Vict0rSch/Deep-Learning/blob/m
 
 See the official Theano tutorial [here](http://deeplearning.net/software/theano/tutorial/).
 
+I have not worked a lot with Convolutional Networks so I won't mention them here, for now.
+
 | Set up  | Theano   | Keras | Lasagne |Recurrent| Resources | Lose Time |
 |:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|:--------:|
 |[![i1][setup-image]](setup.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i6][recurrent-image]](recurrent.md)| [![i5][resources-image]](useful_resources.md) |[![i6][time-image]](http://9gag.com/)|
 
 How to use
 ---
-1. Learn about Machine Learning -> Resources -> [Resources](useful_resources.md#starting-with-deep-learning)
+Machine learning is a vast area. Time and concentration are the two things you need the most to get into it. Don't jump to the next step if you're not sure you're clear with the present one's outcomes. 
 
 
-2. Learn about Deep Learning Theory and feedforward networks (your best bet may very well be M. Nielsen's blog)  -> [Resources](useful_resources.md#starting-with-deep-learning)
+1. Learn about Machine Learning -> Resources -> [Starting with Machine Learning](useful_resources.md#starting-with-machine-learning)
+    * **Requirements**: None. Except basic knowledge in maths
+    * **Outcomes**: Understand what ((un)supervised)learning and training mean, what are some of the most famous techniques and the importance of data (feature selection/extraction, overfitting).
+
+
+2. Learn about Deep Learning Theory and feedforward networks (your best bet may very well be M. Nielsen's blog)  -> [Starting with Deep Learning](useful_resources.md#starting-with-deep-learning)
+    * **Requirements**: Python, very basic linear algebra and analysis (vector products and differenciation basically) + outcome (1)
+    * **Outcomes**: Understand how neural networks are built, trained, improved. Both on the theory and the implementation side. You'll also understand how networks are coded to get a sense of how frameworks work.
+
 
 3. Get familiar with Theano -> [Theano](theano.md)
+    * **Requirements**: Python
+    * **Outcomes**: Be able to understand Theano code and write functions relying on (shared) variables. 
+
 
 4. Get into some code 
-	* Start easy with Keras -> [Keras](keras)  
+	* Start easy with Keras -> [Keras](keras)
+	   * **Requirements**: Python + outcomes (1) and (2)
+	   * **Outcomes**: Understand how the Keras framework can be used and therefore implement any dense feedforward network you like.  
 	* Go into the details with Lasagne -> [Lasagne](lasagne)
+	   * **Requirements**: Python + outcomes (1), (2) and (3)
+	   * **Outcomes**: Understand how the Lasagne framework can be used and therefore implement any dense feedforward network you like. Understand the differences with Keras.
 
-5. Dig into Recurrent Networks -> [Resources](useful_resources.md#on-recurrent-neural-networks)
+  
+5. Dig into Recurrent Networks -> [Resources](useful_resources.md#on-recurrent-neural-networks) 
+    * **Requirements**: outcomes (1) and (2) (strong)
+    * **Outcomes**: Understand the core concepts and usage of recurrent nets. Get the variety of structures.
+
 
 6. Spend some time understanding the handling of dimensions in recurrent nets -> [Recurrent](recurrent.md)
+    * **Requirements**: outcomes (1), (2), one of (4), (5)
+    * **Outcomes**: Be able to create the appropriate dataset and format your data according to the task you seek.
 
-7. Get back to code -> *[on the way]*
+
+7. Get back to code -> *[on the way]*  
+    * **Requirements**:
+    * **Outcomes**:
 
 Repository Structure
 ---
@@ -56,7 +82,7 @@ Repository Structure
 
 *  **[useful_resources.md](useful_resources.md)** -> a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.
 
-* **[recurrent.md](recurrent.md)** -> a special focus on handling your data's dimensions to feed recurrent networks
+* **[recurrent.md](recurrent.md)** -> a special focus on recurrent neural networks (RNNs) and how to handle your data's dimensions to train them
 
 * **[keras](keras)** -> repository containing the tutorial about... Keras. Yep. 
 
