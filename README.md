@@ -14,7 +14,7 @@ Table Of Contents
 Presentation
 ---
 
-This repository contains Deep Learning *implementations* tutorials. For more general knowledge regarding Machine/Deep Learning, have a look at **[useful_resources.md](useful_resources.md)**. 
+This repository contains Deep Learning *implementations* tutorials. For more general knowledge regarding Machine/Deep Learning, have a look at **[useful_resources.md](https://github.com/Vict0rSch/deep_learning/useful_resources.md)**. 
 
 Lasagne and Keras are Theano-based so I recommend you get familiar with Theano before starting these ones.  
 
@@ -30,43 +30,43 @@ I have not worked a lot with Convolutional Networks so I won't mention them here
 
 | Set up  | Theano   | Keras | Lasagne |Recurrent| Resources | Lose Time |
 |:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|:--------:|
-|[![i1][setup-image]](setup.md)|[![i2][theano-image]](theano.md)|[![i3][keras-image]](keras)|[![i4][lasagne-image]](lasagne)|[![i6][recurrent-image]](recurrent.md)| [![i5][resources-image]](useful_resources.md) |[![i6][time-image]](http://9gag.com/)|
+|[![i1][setup-image]](https://github.com/Vict0rSch/deep_learning/setup.md)|[![i2][theano-image]](https://github.com/Vict0rSch/deep_learning/theano.md)|[![i3][keras-image]](https://github.com/Vict0rSch/deep_learning/keras)|[![i4][lasagne-image]](https://github.com/Vict0rSch/deep_learning/lasagne)|[![i6][recurrent-image]](https://github.com/Vict0rSch/deep_learning/recurrent.md)| [![i5][resources-image]](https://github.com/Vict0rSch/deep_learning/useful_resources.md) |[![i6][time-image]](http://9gag.com/)|
 
 How to use
 ---
 Machine learning is a vast area. Time and concentration are the two things you need the most to get into it. Don't jump to the next step if you're not sure you're clear with the present one's outcomes. 
 
 
-1. Learn about Machine Learning -> Resources -> [Starting with Machine Learning](useful_resources.md#starting-with-machine-learning)
+1. Learn about Machine Learning -> Resources -> [Starting with Machine Learning](https://github.com/Vict0rSch/deep_learning/useful_resources.md#starting-with-machine-learning)
     * **Requirements**: None. Except basic knowledge in maths
     * **Outcomes**: Understand what ((un)supervised)learning and training mean, what are some of the most famous techniques and the importance of data (feature selection/extraction, overfitting).
 
 
-2. Learn about Deep Learning Theory and feedforward networks (your best bet may very well be M. Nielsen's blog)  -> [Starting with Deep Learning](useful_resources.md#starting-with-deep-learning)
+2. Learn about Deep Learning Theory and feedforward networks (your best bet may very well be M. Nielsen's blog)  -> [Starting with Deep Learning](https://github.com/Vict0rSch/deep_learning/useful_resources.md#starting-with-deep-learning)
     * **Requirements**: Python, very basic linear algebra and analysis (vector products and differenciation basically) + outcome (1)
     * **Outcomes**: Understand how neural networks are built, trained, improved. Both on the theory and the implementation side. You'll also understand how networks are coded to get a sense of how frameworks work.
 
 
-3. Get familiar with Theano -> [Theano](theano.md)
+3. Get familiar with Theano -> [Theano](https://github.com/Vict0rSch/deep_learning/theano.md)
     * **Requirements**: Python
     * **Outcomes**: Be able to understand Theano code and write functions relying on (shared) variables. 
 
 
 4. Get into some code 
-	* Start easy with Keras -> [Keras](keras)
+	* Start easy with Keras -> [Keras](https://github.com/Vict0rSch/deep_learning/keras)
 	   * **Requirements**: Python + outcomes (1) and (2)
 	   * **Outcomes**: Understand how the Keras framework can be used and therefore implement any dense feedforward network you like.  
-	* Go into the details with Lasagne -> [Lasagne](lasagne)
+	* Go into the details with Lasagne -> [Lasagne](https://github.com/Vict0rSch/deep_learning/lasagne)
 	   * **Requirements**: Python + outcomes (1), (2) and (3)
 	   * **Outcomes**: Understand how the Lasagne framework can be used and therefore implement any dense feedforward network you like. Understand the differences with Keras.
 
   
-5. Dig into Recurrent Networks -> [Resources](useful_resources.md#on-recurrent-neural-networks) 
+5. Dig into Recurrent Networks -> [Resources](https://github.com/Vict0rSch/deep_learning/useful_resources.md#on-recurrent-neural-networks) 
     * **Requirements**: outcomes (1) and (2) (strong)
     * **Outcomes**: Understand the core concepts and usage of recurrent nets. Get the variety of structures.
 
 
-6. Spend some time understanding the handling of dimensions in recurrent nets -> [Recurrent](recurrent.md)
+6. Spend some time understanding the handling of dimensions in recurrent nets -> [Recurrent](https://github.com/Vict0rSch/deep_learning/recurrent.md)
     * **Requirements**: outcomes (1), (2), one of (4), (5)
     * **Outcomes**: Be able to create the appropriate dataset and format your data according to the task you seek.
 
@@ -80,32 +80,32 @@ Repository Structure
 
 * **Readme.md** -> present file (I know you knew)
 
-* **[License](License)** -> GPL v2 ([choose a licence](http://choosealicense.com/))
+* **[License](https://github.com/Vict0rSch/deep_learning/License)** -> GPL v2 ([choose a licence](http://choosealicense.com/))
 
 	> The GPL (V2 or V3) is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms. V3 is similar to V2, but further restricts use in hardware that forbids software alterations.
 
 	> Linux, Git, and WordPress use the GPL. 
 
-* **[setup.md](setup.md)** -> Links and sketchy guide to install frameworks
+* **[setup.md](https://github.com/Vict0rSch/deep_learning/setup.md)** -> Links and sketchy guide to install frameworks
 
-* **[theano.md](theano.md)** -> A short introduction to Theano with the minimum required to go on with Lasagne and Keras. 
+* **[theano.md](https://github.com/Vict0rSch/deep_learning/theano.md)** -> A short introduction to Theano with the minimum required to go on with Lasagne and Keras. 
 
-*  **[useful_resources.md](useful_resources.md)** -> a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.
+*  **[useful_resources.md](https://github.com/Vict0rSch/deep_learning/useful_resources.md)** -> a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.
 
-* **[recurrent.md](recurrent.md)** -> a special focus on recurrent neural networks (RNNs) and how to handle your data's dimensions to train them
+* **[recurrent.md](https://github.com/Vict0rSch/deep_learning/recurrent.md)** -> a special focus on recurrent neural networks (RNNs) and how to handle your data's dimensions to train them
 
 * **[keras](keras)** -> repository containing the tutorial about... Keras. Yep. 
 
-	*  **[readme.md](keras/readme.md)** -> Choose between starting with feedforward networks or get deeper, into recurrent networks. 
-	* **[feedforward\_keras\_mnist\_tutorial.md](keras/feedforward_keras_mnist_tutorial.md)** -> code introduction and explanation to easily run a neural network able to recognize digits (mnist dataset)
-	* **[feedforward\_keras\_mnist.py](keras/feedforward_keras_mnist.py)** -> code to implement a feedforward (dense) neural network trained on mnist using keras.
-	* **[recurrent\_keras.md](keras/recurrent_keras.md)** -> example using recurrent networks. Empty for now, example to come.
+	*  **[readme.md](https://github.com/Vict0rSch/deep_learning/keras/readme.md)** -> Choose between starting with feedforward networks or get deeper, into recurrent networks. 
+	* **[feedforward\_keras\_mnist\_tutorial.md](https://github.com/Vict0rSch/deep_learning/keras/feedforward_keras_mnist_tutorial.md)** -> code introduction and explanation to easily run a neural network able to recognize digits (mnist dataset)
+	* **[feedforward\_keras\_mnist.py](https://github.com/Vict0rSch/deep_learning/keras/feedforward_keras_mnist.py)** -> code to implement a feedforward (dense) neural network trained on mnist using keras.
+	* **[recurrent\_keras.md](https://github.com/Vict0rSch/deep_learning/keras/recurrent_keras.md)** -> example using recurrent networks. Empty for now, example to come.
 	
-* **[lasagne](lasagne)** repository containing the tutorial about... Lasagne. Yep. Again. Repository organized as Keras's
+* **[lasagne](https://github.com/Vict0rSch/deep_learning/lasagne)** repository containing the tutorial about... Lasagne. Yep. Again. Repository organized as Keras's
 	* **[readme.md](lasagne/readme.md)**
-	* **[feedforward\_lasagne\_mnist\_tutorial.md](lasagne/feedforward_lasagne_mnist_tutorial.md)**
-	* **[feedforward\_lasagne\_mnist.py](lasagne/feedforward_lasagne_mnist.py)**
-	* **[recurrent\_lasagne.md](lasagne/recurrent_lasagne.md)**
+	* **[feedforward\_lasagne\_mnist\_tutorial.md](https://github.com/Vict0rSch/deep_learning/lasagne/feedforward_lasagne_mnist_tutorial.md)**
+	* **[feedforward\_lasagne\_mnist.py](https://github.com/Vict0rSch/deep_learning/lasagne/feedforward_lasagne_mnist.py)**
+	* **[recurrent\_lasagne.md](https://github.com/Vict0rSch/deep_learning/lasagne/recurrent_lasagne.md)**
 
 
 
