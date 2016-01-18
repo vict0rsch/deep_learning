@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Deep learning by Vict0rSch</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Deep learning</h1>
+        <h2>Machine Learning Tutorials</h2>
+        <a href="https://github.com/Vict0rSch/deep_learning" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="deep-learning" class="anchor" href="#deep-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deep-Learning</h1>
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table Of Contents</h2>
+
+<p><strong><a href="#presentation">Presentation</a></strong>  </p>
+
+<p><strong><a href="#how-to-use">How to use</a></strong> </p>
+
+<p><strong><a href="#repository-structure">Repository structure</a></strong>  </p>
+
+<p><strong><a href="#the-toothbrush-technique">The Toothbrush Technique</a></strong></p>
+
+<h2>
+<a id="presentation" class="anchor" href="#presentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Presentation</h2>
+
+<p>This repository contains Deep Learning <em>implementations</em> tutorials. For more general knowledge regarding Machine/Deep Learning, have a look at <strong><a href="useful_resources.md">useful_resources.md</a></strong>. </p>
+
+<p>Lasagne and Keras are Theano-based so I recommend you get familiar with Theano before starting these ones.  </p>
+
+<p>However <strong>Keras</strong> is way closer to usual Python than Lasagne so it requires a weaker understanding of Theano. The main thing to understand to get started with Keras is Theano's graph structure.</p>
+
+<p>We concentrate, in <a href="https://github.com/Vict0rSch/Deep-Learning/blob/master/theano.md">theano.md</a>, on a few features of Theano that will be needed in Lasagne mostly and just a little in Keras. You will not learn Theano there but get a glimpse at how it works and how it can be used in a Deep Learning context. Theano is about much more than this, especially regarding <a href="http://deeplearning.net/software/theano/tutorial/using_gpu.html">GPU</a> calculation and <a href="http://deeplearning.net/software/theano/tutorial/gradients.html">Automatic Differenciation</a>.</p>
+
+<p>See the official Theano tutorial <a href="http://deeplearning.net/software/theano/tutorial/">here</a>.</p>
+
+<p>I have not worked a lot with Convolutional Networks so I won't mention them here, for now.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Set up</th>
+<th align="center">Theano</th>
+<th align="center">Keras</th>
+<th align="center">Lasagne</th>
+<th align="center">Recurrent</th>
+<th align="center">Resources</th>
+<th align="center">Lose Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="setup.md"><img src="http://s2.postimg.org/hgrwawlid/three115.png" alt="i1"></a></td>
+<td align="center"><a href="theano.md"><img src="http://s18.postimg.org/cuim8chtx/four56.png" alt="i2"></a></td>
+<td align="center"><a href="keras"><img src="http://s12.postimg.org/xvsdbaepl/unicorn.png" alt="i3"></a></td>
+<td align="center"><a href="lasagne"><img src="http://s24.postimg.org/5sotgm269/stack13.png" alt="i4"></a></td>
+<td align="center"><a href="recurrent.md"><img src="http://s12.postimg.org/fdm1mirux/graph16.png" alt="i6"></a></td>
+<td align="center"><a href="useful_resources.md"><img src="http://s22.postimg.org/6alksj4t9/idea14.png" alt="i5"></a></td>
+<td align="center"><a href="http://9gag.com/"><img src="http://s22.postimg.org/y0v2jhcf1/clock164.png" alt="i6"></a></td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>Machine learning is a vast area. Time and concentration are the two things you need the most to get into it. Don't jump to the next step if you're not sure you're clear with the present one's outcomes. </p>
+
+<ol>
+<li>
+<p>Learn about Machine Learning -&gt; Resources -&gt; <a href="useful_resources.md#starting-with-machine-learning">Starting with Machine Learning</a></p>
+
+<ul>
+<li>
+<strong>Requirements</strong>: None. Except basic knowledge in maths</li>
+<li>
+<strong>Outcomes</strong>: Understand what ((un)supervised)learning and training mean, what are some of the most famous techniques and the importance of data (feature selection/extraction, overfitting).</li>
+</ul>
+</li>
+<li>
+<p>Learn about Deep Learning Theory and feedforward networks (your best bet may very well be M. Nielsen's blog)  -&gt; <a href="useful_resources.md#starting-with-deep-learning">Starting with Deep Learning</a></p>
+
+<ul>
+<li>
+<strong>Requirements</strong>: Python, very basic linear algebra and analysis (vector products and differenciation basically) + outcome (1)</li>
+<li>
+<strong>Outcomes</strong>: Understand how neural networks are built, trained, improved. Both on the theory and the implementation side. You'll also understand how networks are coded to get a sense of how frameworks work.</li>
+</ul>
+</li>
+<li>
+<p>Get familiar with Theano -&gt; <a href="theano.md">Theano</a></p>
+
+<ul>
+<li>
+<strong>Requirements</strong>: Python</li>
+<li>
+<strong>Outcomes</strong>: Be able to understand Theano code and write functions relying on (shared) variables. </li>
+</ul>
+</li>
+<li>
+<p>Get into some code </p>
+
+<ul>
+<li>Start easy with Keras -&gt; <a href="keras">Keras</a>
+
+<ul>
+<li>
+<strong>Requirements</strong>: Python + outcomes (1) and (2)</li>
+<li>
+<strong>Outcomes</strong>: Understand how the Keras framework can be used and therefore implement any dense feedforward network you like.<br>
+</li>
+</ul>
+</li>
+<li>Go into the details with Lasagne -&gt; <a href="lasagne">Lasagne</a>
+
+<ul>
+<li>
+<strong>Requirements</strong>: Python + outcomes (1), (2) and (3)</li>
+<li>
+<strong>Outcomes</strong>: Understand how the Lasagne framework can be used and therefore implement any dense feedforward network you like. Understand the differences with Keras.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Dig into Recurrent Networks -&gt; <a href="useful_resources.md#on-recurrent-neural-networks">Resources</a> </p>
+
+<ul>
+<li>
+<strong>Requirements</strong>: outcomes (1) and (2) (strong)</li>
+<li>
+<strong>Outcomes</strong>: Understand the core concepts and usage of recurrent nets. Get the variety of structures.</li>
+</ul>
+</li>
+<li>
+<p>Spend some time understanding the handling of dimensions in recurrent nets -&gt; <a href="recurrent.md">Recurrent</a></p>
+
+<ul>
+<li>
+<strong>Requirements</strong>: outcomes (1), (2), one of (4), (5)</li>
+<li>
+<strong>Outcomes</strong>: Be able to create the appropriate dataset and format your data according to the task you seek.</li>
+</ul>
+</li>
+<li>
+<p>Get back to code -&gt; <em>[on the way]</em>  </p>
+
+<ul>
+<li>
+<strong>Requirements</strong>:</li>
+<li>
+<strong>Outcomes</strong>:</li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="repository-structure" class="anchor" href="#repository-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Repository Structure</h2>
+
+<ul>
+<li><p><strong>Readme.md</strong> -&gt; present file (I know you knew)</p></li>
+<li>
+<p><strong><a href="License">License</a></strong> -&gt; GPL v2 (<a href="http://choosealicense.com/">choose a licence</a>)</p>
+
+<blockquote>
+<p>The GPL (V2 or V3) is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms. V3 is similar to V2, but further restricts use in hardware that forbids software alterations.</p>
+
+<p>Linux, Git, and WordPress use the GPL. </p>
+</blockquote>
+</li>
+<li><p><strong><a href="setup.md">setup.md</a></strong> -&gt; Links and sketchy guide to install frameworks</p></li>
+<li><p><strong><a href="theano.md">theano.md</a></strong> -&gt; A short introduction to Theano with the minimum required to go on with Lasagne and Keras. </p></li>
+<li><p><strong><a href="useful_resources.md">useful_resources.md</a></strong> -&gt; a list of recommended ressources to either begin, discover or learn more on various topics of machine/deep learning.</p></li>
+<li><p><strong><a href="recurrent.md">recurrent.md</a></strong> -&gt; a special focus on recurrent neural networks (RNNs) and how to handle your data's dimensions to train them</p></li>
+<li>
+<p><strong><a href="keras">keras</a></strong> -&gt; repository containing the tutorial about... Keras. Yep. </p>
+
+<ul>
+<li> <strong><a href="keras/readme.md">readme.md</a></strong> -&gt; Choose between starting with feedforward networks or get deeper, into recurrent networks. </li>
+<li>
+<strong><a href="keras/feedforward_keras_mnist_tutorial.md">feedforward_keras_mnist_tutorial.md</a></strong> -&gt; code introduction and explanation to easily run a neural network able to recognize digits (mnist dataset)</li>
+<li>
+<strong><a href="keras/feedforward_keras_mnist.py">feedforward_keras_mnist.py</a></strong> -&gt; code to implement a feedforward (dense) neural network trained on mnist using keras.</li>
+<li>
+<strong><a href="keras/recurrent_keras.md">recurrent_keras.md</a></strong> -&gt; example using recurrent networks. Empty for now, example to come.</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="lasagne">lasagne</a></strong> repository containing the tutorial about... Lasagne. Yep. Again. Repository organized as Keras's</p>
+
+<ul>
+<li><strong><a href="lasagne/readme.md">readme.md</a></strong></li>
+<li><strong><a href="lasagne/feedforward_lasagne_mnist_tutorial.md">feedforward_lasagne_mnist_tutorial.md</a></strong></li>
+<li><strong><a href="lasagne/feedforward_lasagne_mnist.py">feedforward_lasagne_mnist.py</a></strong></li>
+<li><strong><a href="lasagne/recurrent_lasagne.md">recurrent_lasagne.md</a></strong></li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="the-toothbrush-technique" class="anchor" href="#the-toothbrush-technique" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Toothbrush Technique</h2>
+
+<p>The Toothbrush technique is used to debug code. The concept is easy: pick up your toothbrush, a pen or a spoon and walk it through your code as if they understood it. Better yet use a friend or coworker: you won't need their brain, rather their ears. </p>
+
+<p>The thing is that debugging can be hard and the error might very well be silly. However looking as someone else's code is often hard and/or laborious, so asking a friend/coworker to debug it is hardly possible.<br>
+On the other hand, explaining it to your toothbrush makes you rethink the whole coding process you went through and hopefully find that (silly?) mistake or incoherence. </p>
+
+<p>Contact <a href="https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267">Clément</a> to learn more.</p>
+
+<p><br> </p>
+
+<p><sub>Icons made by <a href="http://www.freepik.com">Freepik</a> from <a href="http://www.flaticon.com">Flaticon</a> licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></sub></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Vict0rSch/deep_learning/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Vict0rSch/deep_learning/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Vict0rSch/deep_learning"></a> is maintained by <a href="https://github.com/Vict0rSch">Vict0rSch</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
