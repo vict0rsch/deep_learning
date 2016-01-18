@@ -2,14 +2,21 @@
 
 Table Of Contents
 ---
-#####[How to use](#how-to-use)  
-#####[Starting with Machine Learning](#starting-with-machine-learning)  
-#####[Starting with Deep Learning](#starting-with-deep-learning)  
-#####[Reading papers](#Reading-papers)  
-#####[General Deep Learning papers and books](#General-Deep-Learning-papers-and-books)  
-#####[On Recurrent Neural Networks](#On-Recurrent-Neural-Networks)  
-#####[Other](#Other)  
-#####[Reading Lists](#reading-lists)
+**[How to use](#how-to-use)**
+  
+**[Starting with Machine Learning](#starting-with-machine-learning)**
+  
+**[Starting with Deep Learning](#starting-with-deep-learning)**
+  
+**[Reading papers](#Reading-papers)**
+  
+**[General Deep Learning papers and books](#General-Deep-Learning-papers-and-books)**
+  
+**[On Recurrent Neural Networks](#On-Recurrent-Neural-Networks)**
+  
+**[Other](#Other)**
+  
+**[Reading Lists](#reading-lists)**
 
 
 How to use

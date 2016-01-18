@@ -2,11 +2,15 @@
 
 Table Of Contents
 ---
-##### [What is it?](#what-is-it)  
-##### [Theano's Graph](#theanos-graph)  
-##### [Theano Functions](#theano-functions)  
-##### [Variables](#variables)  
-##### [Warning](#warning)  
+**[What is it?](#what-is-it)**  
+
+**[Theano's Graph](#theanos-graph)**
+  
+**[Theano Functions](#theano-functions)**
+  
+**[Variables](#variables)**
+  
+**[Warning](#warning)**  
 
 ## What is it?
 [See Theano's presentation](http://deeplearning.net/software/theano/)

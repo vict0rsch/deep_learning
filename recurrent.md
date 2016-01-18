@@ -3,11 +3,16 @@
 Table Of Contents
 ---
 
-#####[Recap](#recap)  
-#####[Batch, Time and Data](#batch-time-and-data)  
-#####[Backpropagation Through Time](backpropagation-through-Time)  
-#####[Example with Lasagne](example-with-lasagne)  
-#####[Example with Keras](example-with-Keras)
+**[Recap](#recap)**
+  
+**[Batch, Time and Data](#batch-time-and-data)**
+  
+**[Backpropagation Through Time](backpropagation-through-Time)**
+  
+**[Example with Lasagne](example-with-lasagne)**
+  
+**[Example with Keras](example-with-Keras)**
+
 
 
 Recap

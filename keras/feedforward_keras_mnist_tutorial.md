@@ -17,14 +17,21 @@ By the way, Keras's documentation is better and better (and it's already good) a
 
 Table of Contents
 ---
-##### [General Organization](#general-organization)  
-##### [Imports](#imports)
-##### [Callbacks](#callbacks)
-##### [Loading the Data](#loading-the-data)
-##### [Creating the Model](#creating-the-model)
-##### [Running the Network](#running-the-network)      
-##### [Plot](#plot)      
-##### [Usage](#usage)      
+**[General Organization](#general-organization)**
+  
+**[Imports](#imports)**
+
+**[Callbacks](#callbacks)**
+
+**[Loading the Data](#loading-the-data)**
+
+**[Creating the Model](#creating-the-model)**
+
+**[Running the Network](#running-the-network)**
+      
+**[Plot](#plot)**
+      
+**[Usage](#usage)**      
 
 
 ##General orginization

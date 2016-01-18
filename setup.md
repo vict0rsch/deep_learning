@@ -2,8 +2,8 @@
 
 Table Of Contents
 ---
-##### [Python](#python)  
-##### [Turotial's Installs](#tutorials-installs)  
+**[Python](#python)**  
+**[Turotial's Installs](#tutorials-installs)**  
 
 ## Python
 

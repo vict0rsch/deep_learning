@@ -18,13 +18,19 @@ By the way, Lasagne's documentation is really good, detailed and cites papers. A
 
 Table of Contents
 ---
-##### [General Organization](#general-organization)  
-##### [Imports](#imports)
-##### [Loading the Data](#loading-the-data)
-##### [Creating the Network](#creating-the-network)
-##### [Throwing one batch at a time](#throwing-one-batch-at-a-time)
-##### [Running the Network](#running-the-network)      
-##### [Usage](#usage)      
+**[General Organization](#general-organization)**
+  
+**[Imports](#imports)** 
+ 
+**[Loading the Data](#loading-the-data)**  
+
+**[Creating the Network](#creating-the-network)**  
+
+**[Throwing one batch at a time](#throwing-one-batch-at-a-time)**
+
+**[Running the Network](#running-the-network)**   
+   
+**[Usage](#usage)**      
 
 ## General organization
 
