@@ -1,5 +1,5 @@
-Keras Tutorial
----
+#Keras Tutorial
+
 This section will walk you through the code of [`feedforward_keras_mnist.py`](feedforward_keras_mnist.py), which I suggest you have open while reading. This tutorial is based on several Keras examples and from it's documentation :
 
 * **[mnist_mlp.py example](https://github.com/fchollet/keras/blob/master/examples/mnist_mlp.py)**
@@ -13,10 +13,21 @@ By the way, Keras's documentation is better and better (and it's already good) a
 ####[Keras Documentation](http://keras.io/)
 ####[Keras's Github](https://github.com/fchollet/keras)
 
-Feedforward Keras mnist
---
+#Feedforward Keras mnist
 
-###General orginization
+Table of Contents
+---
+##### [General Organization](#general-organization)  
+##### [Imports](#imports)
+##### [Callbacks](#callbacks)
+##### [Loading the Data](#loading-the-data)
+##### [Creating the Model](#creating-the-model)
+##### [Running the Network](#running-the-network)      
+##### [Plot](#plot)      
+##### [Usage](#usage)      
+
+
+##General orginization
 
 We start with importing everything we'll need (no shit...). Then we define the `callback` class that will be used to store the loss history. Lastly we define functions to load the data, compile the model, train it and plot the losses. 
 
@@ -26,7 +37,7 @@ Also, don't forget the Python's `reload(package)`
 function, very useful to run updates from your code without quitting (I)python.
 
 
-###Imports
+##Imports
 
 ```python
 import time
@@ -49,7 +60,7 @@ Dense` layer, or treat them as `layers` that will apply to the `model`'s last 'r
 * `optimizers` are the optimization algorithms such as the classic [Stochastic Gradient Descent](http://keras.io/optimizers/#sgd). We will use `RMSprop` (see [here](https://www.youtube.com/watch?v=O3sxAc4hxZU) G. Hinton's explanatory video and [there](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) the slides) 
 * `datasets` (in our case) will download the mnist dataset if it is not already in `~/.keras/datasets/` and load it into `numpy` arrays. 
 
-###Callback
+##Callback
 
 ```python
 class LossHistory(cb.Callback):
@@ -67,7 +78,7 @@ The new class `LossHistory` extends Keras's `Callback`class. It basically relies
 
 This callback is pretty straight forward. But you could want to make it more complicated! Remember that callbacks are simply functions : you could do anything else within these. More on callbacks and available events [there](http://keras.io/callbacks/).
 
-### Loading the Data
+## Loading the Data
 ```python
 def load_data():
     print 'Loading data...'
@@ -98,7 +109,7 @@ Then we need to change the targets. `y_train` and `y_test` have shapes `(60000,)
 Lastly we reshape the examples so that they are shape `(60000,784)`, `(10000, 784)` and not `(60000, 28, 28)`, `(10000, 28, 28)`.
 
 
-### Creating the model
+## Creating the model
 
 ```python
 def init_model():
@@ -136,7 +147,7 @@ Remember I mentioned that Keras used Theano? well, you just went through it. Cre
 And yes, that's it about Theano. Told you you did not need much! 
 
 
-### Training the network
+## Running the network
 
 ```python
 def run_network(data=None, model=None, epochs=20, batch=256):
@@ -182,7 +193,7 @@ So first we load the data, create the model and start the loss history. All ther
 * `validation_data` is, well, the validation data. Here we use the test data but it could be different. Also you could specify a `validation_split` float between 0 and 1 instead, spliting the training data for validation.  
 * `verbose = 2` so that Keras displays both the training and validation loss and accuracy. 
 
-###Plot
+##Plot
 ```python
 def plot_losses(losses):
     fig = plt.figure()
@@ -193,7 +204,7 @@ def plot_losses(losses):
 ```
 Nothing much here, just that it is helpful to monitor the loss during training but you could provide any list here of course. 
 
-###Usage
+##Usage
 ```python
 import feedforward_keras_mnist as fkm
 

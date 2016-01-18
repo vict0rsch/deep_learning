@@ -1,6 +1,14 @@
-Theano Quick Intro
+#Theano Quick Intro
+
+Table Of Contents
 ---
-### What is it?
+##### [What is it?](#what-is-it)  
+##### [Theano's Graph](#theanos-graph)  
+##### [Theano Functions](#theano-functions)  
+##### [Variables](#variables)  
+##### [Warning](#warning)  
+
+## What is it?
 [See Theano's presentation](http://deeplearning.net/software/theano/)
 
 >Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Theano features:
@@ -24,7 +32,7 @@ Regarding our purpose here, Theano's main features to remember are:
 * How it handles functions
 * Variables
 
-### Theano's graph
+## Theano's graph
 
 [Theano's Symbolic Graph](http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html)
 
@@ -48,7 +56,7 @@ In this code example (from [Theano's Symbolic Graph](http://deeplearning.net/sof
 
 To evaluate `z` on numerical values of `x` and `y` (say 4 and 1 for instance), you will need functions.
 
-### Theano functions
+## Theano functions
 
 [Theano's function documentation](http://deeplearning.net/software/theano/library/compile/function.html)  
 [Function examples](http://deeplearning.net/software/theano/tutorial/examples.html)
@@ -79,7 +87,7 @@ So here we declare a Theano variable `x`. Then we define another variable, `sigm
 Theano functions are way richer thant that so I suggest you go and look at least into **[Params](http://deeplearning.net/software/theano/tutorial/examples.html#setting-a-default-value-for-an-argument)**, **[Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)** and  **Updates** (4th paragraph in [Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)) (not knowing about Shared Variables is missing a huge part of how Theano works and they are needed for Lasagne).
 
 
-### Variables
+## Variables
 
 [All fully typed constructors](http://deeplearning.net/software/theano/library/tensor/basic.html#all-fully-typed-constructors)
 
@@ -87,7 +95,7 @@ As seen before, there are variables and shared variables in Theano. Also, Theano
 
 >Theano provides a list of predefined tensor types that can be used to create a tensor variables. Variables can be named to facilitate debugging, and all of these constructors accept an optional name argument.
 
-### Warning
+## Warning
 Debugging Theano errors can be quite difficult. I suggest you go through [this](http://deeplearning.net/software/theano/tutorial/debug_faq.html) if you have troubles. 
 
 You can set `exception_verbosity = high` in your `~/.theanorc` file, but it can make the errors *really* verbose.

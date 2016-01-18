@@ -1,5 +1,15 @@
 # Recurrent Nets and Data dimensions
 
+Table Of Contents
+---
+
+#####[Recap](#recap)  
+#####[Batch, Time and Data](#batch-time-and-data)  
+#####[Backpropagation Through Time](backpropagation-through-Time)  
+#####[Example with Lasagne](example-with-lasagne)  
+#####[Example with Keras](example-with-Keras)
+
+
 Recap
 ---
 My point here is to undertand how to handle dimensions and therefore understand how to implement recurrent neural networks. As you may already know, there is a lot of ways of using RNNs. I'm going to focus on [Andrej Karpathy](http://karpathy.github.io/)'s illustration which I find clear and to the point :
