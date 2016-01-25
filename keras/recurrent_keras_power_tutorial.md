@@ -160,7 +160,7 @@ The difference between `return_sequence=True` and `return_sequence=False` is tha
 
 In our case, the first LSTM layer returns sequences because we want it to transfer its information both to the next layer (upwards in the chart) and to itself for the next timestep (arrow to the right).
 
-However for the second one, we just expect its last sequence prediction to be compared to the target. This means for inputs 0 to `sequence_length - 2` the prediction is only passed to the layer and not as an input. However the `sequence_length - 1`th input is passed forward to the Dense layer for the loss computation against the target.
+However for the second one, we just expect its last sequence prediction to be compared to the target. This means for inputs 0 to `sequence_length - 2` the prediction is only passed to the layer itself for the next timestep and not as an input to the next ( = output) layer. However the `sequence_length - 1`th input is passed forward to the Dense layer for the loss computation against the target.
 
 ### More details?
 
