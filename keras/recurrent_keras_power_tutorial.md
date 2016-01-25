@@ -48,7 +48,7 @@ Loading the data
 ---
 
 ```python
-def data_power_consumption(path_to_dataset, sequence_length=50, ratio=1.0):
+def data_power_consumption(path_to_dataset='household_power_consumption.txt', sequence_length=50, ratio=1.0):
 
     max_values = ratio * 2049280
     
