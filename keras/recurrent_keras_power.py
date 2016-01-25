@@ -80,7 +80,7 @@ def build_model():
 
 
 def run_network(model=None, data=None):
-
+    global_start_time = time.time()
     epochs = 1
     ratio = 0.5
     sequence_length = 50
@@ -105,6 +105,7 @@ def run_network(model=None, data=None):
         predicted = model.predict(X_test)
         predicted = np.reshape(predicted, (predicted.size,))
     except KeyboardInterrupt:
+        print 'Training duration (s) : ', time.time() - global_start_time
         return model, y_test, 0
 
     try:
@@ -115,4 +116,6 @@ def run_network(model=None, data=None):
         plt.show()
     except Exception as e:
         print str(e)
+    print 'Training duration (s) : ', time.time() - global_start_time
+    
     return model, y_test, predicted

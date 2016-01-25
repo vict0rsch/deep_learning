@@ -239,6 +239,7 @@ Just like before, to be as modular as possible we start with checking whether or
         predicted = model.predict(X_test)
         predicted = np.reshape(predicted, (predicted.size,))
     except KeyboardInterrupt:
+        print 'Training duration (s) : ', time.time() - global_start_time
         return model, y_test, 0
 ```
 Again, we put the training into a try/except statement so that we can interrupt the training without losing everythin to a `KeyboardInterrupt`.
@@ -270,6 +271,7 @@ In case of keyboard interruption, we return the `model`, `y_test` and `X_test`. 
         plt.show()
     except Exception as e:
         print str(e)
+    print 'Training duration (s) : ', time.time() - global_start_time
     return model, y_test, predicted
 ```
 
