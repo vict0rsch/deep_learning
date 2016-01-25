@@ -29,8 +29,10 @@ Starting with Machine Learning
 ----
 
 1. **<http://www.r2d3.us/>** A **beginner's** introduction to **machine learning** (with decision trees), how it works and what is at stake. The website is amazingly beautiful and didactical. If you're ehre, on *this* page, you probably won't need to read through that. But still, it's too good to miss. And worth sharing with everyone. [Translations available in French, Russian and Chinese]
+
+2. **<https://blog.monkeylearn.com/a-gentle-guide-to-machine-learning/>** Here is another blog post to understand the first principles of machine learning. It nicely starts with real-world problems Machine Learning helps address, and ends with how to test your model, introduciont overfitting, precision and recall. 
 	
-2. **<https://www.coursera.org/learn/machine-learning>** Here is [Andrew Ng](http://www.andrewng.org/)'s most famous MOOC on Coursera. Again, this is a "*start-from-scratch*" ressource, it needs little maths and is easy going with coding.  The point here is to teach about **machine learnin**g in general, amongst which stand neural networks. It uses [Octave](https://www.gnu.org/software/octave/) (free version of Matlab) which is a downside for me *vs* Python but this is not important if you're just starting and if you're not you can always do it in Python anyway. 
+2. **<https://www.coursera.org/learn/machine-learning>** Here is [Andrew Ng](http://www.andrewng.org/)'s most famous MOOC on Coursera. Again, this is a "*start-from-scratch*" ressource, it needs little maths and is easy going with coding.  The point here is to teach about **machine learnin**g in general, amongst which stand neural networks. It uses [Octave](https://www.gnu.org/software/octave/) (free version of Matlab) which is a downside for me *vs* Python but this is not important if you're just starting and if you're not you can always do it in Python anyway. Also, it starts quite slowly especially regarding maths. Hold on to the course untill it gets a little harder and more interesting.
 
 3. **<https://www.quora.com/topic/Machine-Learning>** You could spend years exploring Quora so jump into it! You'll find interesting, funny and/or weird questions and fascinating, detailed and/or concise answers. It is a great resource to both widen and deepen your interests. It's up to you.
 
@@ -46,6 +48,8 @@ Starting with Deep Learning
 	_This is where I started with Deep Learning and I want to **thank [M. Nielsen](http://michaelnielsen.org/)** for his very informative and pedagogical work._
 	
 2. **<http://cs231n.stanford.edu/syllabus.html>** A great set of lessons, from a Python/Numpy introduction to Convolutional Neural Networks. It also rapidly mentions other machine learning techniques such as SVMs and kNN. You'll find there the slides, **videos** and assignments (notebooks). See all the code at **<http://cs231n.github.io/>**   
+
+3. **<https://www.udacity.com/course/deep-learning--ud730>** This is [Google](http://googleresearch.blogspot.mx/2016/01/teach-yourself-deep-learning-with.html)'s Deep Learning MOOC with Udacity. They use Tensorflow rather than Theano (of course, TensorFlow it theirs...)  but they do tackle issues that do not depend on your programming framework. Moreover, Keras can use TensorFlow as a backend.
 	
 Reading papers
 ---
