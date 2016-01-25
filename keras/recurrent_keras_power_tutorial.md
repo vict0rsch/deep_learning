@@ -40,7 +40,7 @@ np.random.seed(1234)
 * `models` is the core of Keras's neural networks implementation. It is the object that represents the network : it will have layers, activations and so on. It is the object that will be 'trained' and 'tested'. `Sequetial` means we will use a 'layered' model, not a graphical one. 
 
 * `Dense, Activation, Dropout` core layers are used to build the network : feedforward standard layers and Activation and Dropout modules to parametrize the layers.
-* `LSTM` is a reccurent layer. LSTM cells are quite complex and should be carefully studied (see [resources](../useful_resources.md), Chris Olah's blog and N. De Freitas's video), however see [here](http://keras.io/layers/recurrent/#lstm) the default parameters. 
+* `LSTM` is a reccurent layer. LSTM cells are quite complex and should be carefully studied (see in [resources](../useful_resources.md): Chris Olah's [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) and N. De Freitas's [video]((https://www.youtube.com/watch?v=56TYLaQN4N8&index=1&list=PL0NrLl_3fZQ0E5mJJisEP6ZQvHVHZd5b_))), however see [here](http://keras.io/layers/recurrent/#lstm) the default parameters. 
 
 Last thing is that for reproductibility, a seed is used in numpy's random.
 
@@ -48,42 +48,53 @@ Loading the data
 ---
 
 ```python
-with open(path_to_file) as f:
-    data = csv.reader(f, delimiter=";")
-    power = []
-    for line in data:
-        try:
-            power.append(float(line[2]))
-        except ValueError:
-            pass
+def data_power_consumption(path_to_dataset, sequence_length=50, ratio=1.0):
+
+    max_values = ratio * 2049280
+    
+    with open(path_to_file) as f:
+        data = csv.reader(f, delimiter=";")
+        power = []
+        nb_of_values = 0
+        for line in data:
+            try:
+                power.append(float(line[2]))
+                nb_of_values += 1
+            except ValueError:
+                pass
+            # 2049280.0 is the total number of valid values, i.e. ratio = 1.0
+            if nb_of_values / 2049280.0 >= ratio:
+                break
 ```
 
 The initial file contains lots of different pieces of data. We will here focus on a single value : a house's `Global_active_power ` history, minute by minute for almost 4 years. This means roughly 2 million points. Some values are missing, this is why we `try` to load the values as floats into the list and if the value is not a number ( missing values are marked with a `?`) we simply ignore them.
 
+Also if we do not want to load the entire dataset, there is a condition to stop loading the data when a certain ratio is reached. 
+
 ```python
-result = []
-for index in range(len(power) - sequence_length):
-    result.append(power[index: index + sequence_length])
-result = np.array(result)  # shape (2049230, 50)
+    result = []
+    for index in range(len(power) - sequence_length):
+        result.append(power[index: index + sequence_length])
+    result = np.array(result)  # shape (2049230, 50)
 ```
 Once all the datapoints are loaded as one large timeseries, we have to **split** it into examples. Again, one example is made of a sequence of 50 values. Using the first 49, we are going to try and predict the 50th. Moreover, we'll do this for every minute given the 49 previous ones so we use a sliding buffer of size 50.
 
 ```python
-result_mean = result.mean()
-result -= result_mean
-print "Shift : ", result_mean
-print "Data  : ", result.shape
+    result_mean = result.mean()
+    result -= result_mean
+    print "Shift : ", result_mean
+    print "Data  : ", result.shape
 ```
 Neural networks usually learn way better when data is pre-processed (cf Y. Lecun's 1995 [paper](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf), section 4.3). However regarding time-series we do not want the network to learn on data too far from the real world. So here we'll keep it simple and simply center the data to have a `0` mean. 
 
 ```python
-row = round(0.9 * result.shape[0])
-train = result[:row, :]
-np.shuffle(train)
-X_train = train[:, :-1]
-y_train = train[:, -1]
-X_test = result[row:, :-1]
-y_test = result[row:, -1]
+    row = round(0.9 * result.shape[0])
+    train = result[:row, :]
+    np.random.shuffle(train)
+    X_train = train[:, :-1]
+    y_train = train[:, -1]
+    X_test = result[row:, :-1]
+    y_test = result[row:, -1]
 ```
 
 Now that the examples are formatted, we need to split them into train and test, input and target. 
@@ -92,10 +103,10 @@ Here we select 10% of the data as test and 90% to train. We also select the last
 We shuffle the training examples so that we train in no particular order and the distribution is uniform (for the batch calculation of the loss) but not the test set so that we can visualize our predictions with real signals. 
 
 ```python
-X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
-X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
-
-return [X_train, y_train, X_test, y_test]
+    X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
+    X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
+    
+    return [X_train, y_train, X_test, y_test]
 ```
 Last thing regards input formats. Read through the [recurrent](../recurrent.md) post to get more familiar with data dimensions. So we reshape the inputs to have dimensions (`#examples`, `#values in sequences`, `dim. of each value`). Here each value is 1-dimensional, they are only one measure (of power consumption at time t). However if we were to predict speed vectors they could be 3 dimensional for instance. 
 
@@ -105,8 +116,10 @@ Building the model
 ---
 
 ```python
-model = Sequential()
-layers = [1, 50, 100, 1]
+def build_model():
+
+    model = Sequential()
+    layers = [1, 50, 100, 1]
 ```
 
 So here we are going to build our `Sequential` model. This means we're going to stack layers in this object.
@@ -115,36 +128,36 @@ Also, `layers` is the list containing the sizes of each layer. We are therefore 
 
 
 ```python
-model.add(LSTM(
-        input_dim=layers[0],
-        output_dim=layers[1],
-        return_sequences=True))
-model.add(Dropout(0.2))
+    model.add(LSTM(
+            input_dim=layers[0],
+            output_dim=layers[1],
+            return_sequences=True))
+    model.add(Dropout(0.2))
 ```
 
 After the model is initialized, we create a first layer, in this case an LSTM layer. Here we use the default parameters so it behaves as a standard recurrent layer. Since our input is of 1 dimension, we declare that it should expect an `input_dim` of `1`. Then we say we want `layers[1]`  units in this layer. We also add 20% `Dropout` in this layer.
 
 ```python
-model.add(LSTM(
-        layers[2],
-        return_sequences=False))
-model.add(Dropout(0.2))
+    model.add(LSTM(
+            layers[2],
+            return_sequences=False))
+    model.add(Dropout(0.2))
 ```    
 
 Second layer is even simpler to create, we just say how many units we want (`layers[2]`) and Keras takes care of the rest. 
 
 ```python
-model.add(Dense(
-        output_dim=layers[3]))
-model.add(Activation("linear"))
+    model.add(Dense(
+            output_dim=layers[3]))
+    model.add(Activation("linear"))
 ```
 The last layer we use is a Dense layer ( = feedforward). Since we are doing a regression, its activation is linear. 
 
 ```python
-start = time.time()
-model.compile(loss="mse", optimizer="rmsprop")
-print "Compilation Time : ", time.time() - start
-return model
+    start = time.time()
+    model.compile(loss="mse", optimizer="rmsprop")
+    print "Compilation Time : ", time.time() - start
+    return model
 ```
 
 Lastly, we compile the model using a Mean Square Error (again, it's standard for regression) and the `RMSprop` optimizer. See the [mnist example](feedforward_keras_mnist_tutorial.md#creating-the-model) to learn more on `rmsprop`. 
@@ -194,3 +207,71 @@ On the other hand, `return_sequence=False` for the second layer because its outp
 Had we stacked three recurrent hidden layers, we'd have set `return_sequence=True` to the second hidden layer and `return_sequence=False` to the last. In other words, `return_sequence=False` is used as an interface from recurrent to feedforward layers (dense or convolutionnal).
 
 Also, if the output had a dimension `> 1`, we'd only change the size of the `Dense` layer. 
+
+## Running the network
+
+```python
+def run_network(model=None, data=None):
+    epochs = 1
+    ratio = 0.5
+    path_to_dataset = 'household_power_consumption.txt'
+    
+    if data is None:
+        print 'Loading data... '
+        X_train, y_train, X_test, y_test = data_power_consumption(
+                path_to_dataset, sequence_length, ratio)
+    else:
+        X_train, y_train, X_test, y_test = data
+    
+    print '\nData Loaded. Compiling...\n'
+    
+    if model is None:
+        model = build_model()
+```
+
+Just like before, to be as modular as possible we start with checking whether or not `data` and `model` values were provided. If not we load the data and build the model. Set `ratio` to the proportion of the entire dataset you want to load (of course `ratio <= 1` ... if not `data_power_consumption` will behave as if `ratio = 1`)
+
+```python
+    try:
+        model.fit(
+            X_train, y_train,
+            batch_size=512, nb_epoch=epochs, validation_split=0.05)
+        predicted = model.predict(X_test)
+        predicted = np.reshape(predicted, (predicted.size,))
+    except KeyboardInterrupt:
+        return model, y_test, 0
+```
+Again, we put the training into a try/except statement so that we can interrupt the training without losing everythin to a `KeyboardInterrupt`.
+
+To train the model, we call the `model`'s `fit` method. Nothing new here. Pretty straight forward. 
+
+Let's focus a bit on `predicted`.
+
+* by construction `X_test` is an array with 49 columns (timesteps). The list `[ X_test[i][0] ]` is the entire signal (minus the last 49 values) from which it was built since we've used a 1-timestep sliding buffer.
+
+* `X_test[0]` is the first sequence, that is to say the first 49 values of the original signal. 
+
+* `predict(X_test[0])` is therefore the prediction for the 50th value and its associated target is `y_test[0]`. Moreover, by construction, `y_test[0] = X_test[1][48] = X_test[2][47] = ...` 
+
+* then `predict(X_test[1])` is the prediction of the 51th value, associated with `y_test[1]` as a target.
+
+* therefore `predict(X_test)` is the predicted signal, one step ahead, and `y_test` is its target.
+
+* `predict(X_test)` is a list of lists (in fact a 2-dimensional numpy array) with one value, therefore we reshape it so that it simply is a list of values (1-dimensional numpy array). 
+
+In case of keyboard interruption, we return the `model`, `y_test` and `X_test`. The latter is returned so that you can run `predict` on the early-returned `model` if you like.
+
+```python
+    try:
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        ax.plot(y_test[:100, 0])
+        plt.plot(predicted[:100, 0])
+        plt.show()
+    except Exception as e:
+        print str(e)
+    return model, y_test, predicted
+```
+
+Lastly we plot the result of the prediction for the first 100 timesteps and return `model`, `y_test` and the `predicted` values.
+
