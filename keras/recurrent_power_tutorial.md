@@ -105,16 +105,92 @@ Building the model
 ---
 
 ```python
-layers = [1, 50, 100, 1]
 model = Sequential()
+layers = [1, 50, 100, 1]
 ```
 
+So here we are going to build our `Sequential` model. This means we're going to stack layers in this object.
+
+Also, `layers` is the list containing the sizes of each layer. We are therefore going to have a network with 1-dimensional input, two hidden layers of sizes 50 and 100 and eventually a 1-dimensional output layer.
 
 
+```python
+model.add(LSTM(
+        input_dim=layers[0],
+        output_dim=layers[1],
+        return_sequences=True))
+model.add(Dropout(0.2))
+```
+
+After the model is initialized, we create a first layer, in this case an LSTM layer. Here we use the default parameters so it behaves as a standard recurrent layer. Since our input is of 1 dimension, we declare that it should expect an `input_dim` of `1`. Then we say we want `layers[1]`  units in this layer. We also add 20% `Dropout` in this layer.
+
+```python
+model.add(LSTM(
+        layers[2],
+        return_sequences=False))
+model.add(Dropout(0.2))
+```    
+
+Second layer is even simpler to create, we just say how many units we want (`layers[2]`) and Keras takes care of the rest. 
+
+```python
+model.add(Dense(
+        output_dim=layers[3]))
+model.add(Activation("linear"))
+```
+The last layer we use is a Dense layer ( = feedforward). Since we are doing a regression, its activation is linear. 
+
+```python
+start = time.time()
+model.compile(loss="mse", optimizer="rmsprop")
+print "Compilation Time : ", time.time() - start
+return model
+```
+
+Lastly, we compile the model using a Mean Square Error (again, it's standard for regression) and the `RMSprop` optimizer. See the [mnist example](feedforward_keras_mnist_tutorial.md#creating-the-model) to learn more on `rmsprop`. 
 
 
+Return_Sequence
+---
+For now we have not looked into the `return_sequence=` parameter of the LSTM layers. Just like in the [recurrent](../recurrent.md) post on dimensions, we'll use Andrej Karpathy's chart to understand what is hapenning. See the post for more details on how to read it. 
 
+![Karpathy's RNNs illustration](http://karpathy.github.io/assets/rnn/diags.jpeg)
 
+The difference between `return_sequence=True` and `return_sequence=False` is that in the first case the network behaves as in the 5th illustration (second *many to many*) and in the latter it behaves as the 3rd, *many to one*. 
 
+In our case, the first LSTM layer returns sequences because we want it to transfer its information both to the next layer (upwards in the chart) and to itself for the next timestep (arrow to the right).
 
+However for the second one, we just expect its last sequence prediction to be compared to the target. This means for inputs 0 to `sequence_length - 2` the prediction is only passed to the layer and not as an input. However the `sequence_length - 1`th input is passed forward to the Dense layer for the loss computation against the target.
 
+### More details?
+
+If you're still not clear with what happens, let's set `sequence_length` to `3`. In this case the aim would be to predict the 4th value and compute the loss against the real 4th value, the target. 
+
+1. The first example value is fed to the network from the input
+
+    a. The first hidden layer's activation is computed and passed both to the second hidden layer and to itself
+    
+    b. The second hidden layer takes as input the first hidden layer's activation, computes its own activation and passes it only to itself
+    
+2. The second example of the same sequence is fed from the input
+
+    a. The first hidden layer takes as input both this value and its own previous prediction from the first timestep. The computed activation is fed again both to the second layer and to the first hidden layer itself
+    
+    b. The second layer behaves likewise: it takes its previous prediction and the first hidden layer's output as inputs and outputs an activation. This activation, once again, is fed to the second hidden layer for the next timestep
+    
+3. The last value of the sequence is input into the network
+
+    a. The first hidden layer behaves as before (2.a)
+    
+    b. The second layer also behaves as before (2.b) except that this time, its activation is also passed to the last, `Dense` layer.
+    
+    c. The `Dense` layer computes its activation from the second hidden layer's activation. This activation is the prediction our network does for the 4th timestep. 
+    
+**To conclude**, the fact that `return_sequence=True` for the first layer means that its output is always fed to the second layer. As a whole regarding time, all its activations can be seen as the sequence of prediction this first layer has made from the input sequence.  
+On the other hand, `return_sequence=False` for the second layer because its output is only fed to the next layer at the end of the sequence. As a whole regarding time, it does not output a prediction for the sequence but one only prediction-vector (of size `layer[2]`) for the whole input sequence. The linear  `Dense` layer is used to aggregate all the information from this prediction-vector into one single value, the predicted 4th timestep of the sequence.
+
+### To go further
+
+Had we stacked three recurrent hidden layers, we'd have set `return_sequence=True` to the second hidden layer and `return_sequence=False` to the last. In other words, `return_sequence=False` is used as an interface from recurrent to feedforward layers (dense or convolutionnal).
+
+Also, if the output had a dimension `> 1`, we'd only change the size of the `Dense` layer. 

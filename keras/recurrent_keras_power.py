@@ -44,8 +44,8 @@ def data_power_consumption(path_to_file='household_power_consumption.txt'):
 
 
 def build_model():
-    layers = [1, 50, 100, 100, 1]
     model = Sequential()
+    layers = [1, 50, 100, 100, 1]
 
     model.add(LSTM(
         output_dim=layers[1],
