@@ -30,7 +30,9 @@ Table of Contents
 
 **[Running the Network](#running-the-network)**   
    
-**[Usage](#usage)**      
+**[Usage](#usage)** 
+
+**[Quick Exercise](#quick-exercise)**     
 
 ## General organization
 
@@ -304,3 +306,21 @@ network = flm.run_network(data=data)
 
 ```
 Using an Intel i7 CPU at 3.5GHz and an NVidia GTX 970 GPU, we achieve 0.9829 accuracy (1.71% error) in 32.2 seconds of training using this implementation (including loading and compilation). 
+
+## Quick Exercise
+
+Ok, now you've seen how Lasagne uses Theano. To make sure you've got the concepts as a whole here is a little exercise. Say I give you the last layer of a network and an example. How would you predict the associated number using this already trained network?
+
+For instance write the function `get_class()` here :
+
+```python
+import feedforward_lasagne_mnist as flm
+
+data = flm.load_data()
+_, _, X_test, _ = data
+
+network = flm.run_network(data=data)
+example = X_test[-10]
+
+get_class(network, example) 
+```

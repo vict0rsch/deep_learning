@@ -170,31 +170,24 @@ def run_network(data=None, num_epochs=10, ratio=0.5):
 
             # Going over the training data
             train_err = 0
-            train_batches = 0
+            train_batches = 1
             start_time = time()
             nb_batches = X_train.shape[0] / batchsize
-            time_line = np.zeros(nb_batches)
             for batch in iterate_minibatches(X_train, y_train,
                                              batchsize, shuffle=True):
-                current_time = time()
                 inputs, targets = batch
                 train_err += train_fn(inputs, targets)
+                if train_batches % 50 == 0:
+                    err_to_print = train_err
+                    batch_to_print = nb_batches
                 train_batches += 1
                 str_out = "\rTrain Batch  " + str(train_batches)
                 str_out += "/" + str(nb_batches)
-                str_out += "  |  Loss : " + str(train_err / train_batches)[:7]
-                str_out += "  |  Remaining time (s) : "
-                remaining_seconds = time() - current_time
-                remaining_seconds *= (nb_batches - train_batches)
-                time_line[train_batches - 1] = round(remaining_seconds)
-                if (train_batches - 1) % 5 == 0:
-                    durations = time_line[train_batches-1: train_batches+50]
-                    durations = np.mean([t for t in durations if t > 0])
-                str_out += str(durations)
+                str_out += "\t | loss : " + str(err_to_print / batch_to_print)
                 sys.stdout.write(str_out)
                 sys.stdout.flush()
 
-            print "\nGoing through validation data"
+            print "\n\nGoing through validation data"
             # Going over the validation data
             val_err = 0
             val_batches = 0
@@ -207,7 +200,7 @@ def run_network(data=None, num_epochs=10, ratio=0.5):
 
             # Then we print the results for this epoch:
             # train_batches - 1 because started at 1 and not 0
-            print "training loss:\t\t\t" + str(train_err / train_batches)
+            print "training loss:\t\t\t" + str(train_err / train_batches - 1)
             print "validation loss:\t\t" + str(val_err / val_batches)
             print("Epoch {} of {} took {:.3f}s \n\n".format(
                 epoch + 1, num_epochs, time() - start_time))
@@ -234,22 +227,13 @@ def run_network(data=None, num_epochs=10, ratio=0.5):
             plt.show(block=False)
         except Exception as e:
             print str(e)
-            print "predicted = ", repr(
-                np.reshape(predicted[:prediction_size], (prediction_size,)))
+            print repr(predicted)
             print '\n'
-            print "y = ", repr(
+            print repr(
                 np.reshape(y_test[:prediction_size], (prediction_size,)))
         return network
     except KeyboardInterrupt:
         return network
-
-
-def push_to_array(value, array):
-    new_array = np.zeros(array.shape[0])
-    for i in range(array.shape[0] - 1):
-        new_array[i] = array[i + 1]
-    new_array[-1] = value
-    return new_array
 
 
 def network_output(network, X_test):

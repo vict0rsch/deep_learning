@@ -18,7 +18,7 @@ Table Of Content
 
 #General oragnization
 
-We start with importing everything we'll need (no shit...). The we define functions to load the data, compile the model, train it and plot the results. 
+We start with importing everything we'll need (no shit...). Then we define functions to load the data, compile the model, train it and plot the results. 
 
 The overall philosophy is modularity. We use default parameters in the `run_network` function so that you can feed it with already loaded data (and not re-load it each time you train a network) or a pre-trained network `model` to enable warm restarts.
 
