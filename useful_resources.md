@@ -1,4 +1,4 @@
-#Useful links
+# Useful links
 
 Table Of Contents
 ---
@@ -10,7 +10,7 @@ Table Of Contents
   
 **[Reading papers](#Reading-papers)**
   
-**[General Deep Learning papers and books](#General-Deep-Learning-papers-and-books)**
+**[General Deep Learning papers and books](#general-deep-learning-papers-and-books)**
   
 **[On Recurrent Neural Networks](#On-Recurrent-Neural-Networks)**
   
@@ -221,3 +221,5 @@ The following are insanely good, exhaustive and pertinent reading/resources list
 2. **<https://github.com/ChristosChristofidis/awesome-deep-learning>** **Deep Learning**-focused list of resources, going from researches to datasets and frameworks. 
 
 3. **<http://deeplearning.net/reading-list/>** Research and Deep Learing-oriented reading list.
+
+4. **<http://www.wildml.com>** Nice review of deep learning, great glossary worth reading [Glossary] (http://www.wildml.com/deep-learning-glossary/)
