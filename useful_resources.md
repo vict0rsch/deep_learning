@@ -19,14 +19,14 @@ Table Of Contents
 **[Reading Lists](#reading-lists)**
 
 
-How to use
-----
+## How to use
+
 Here is a collection of useful resources to learn / understand / discover more about (Deep) Learning. It will be updated regularly, I'll be glad if you have  [suggestions](https://github.com/Vict0rSch/Deep-Learning/pulls) to this list. 
 
 Resources can be either research papers, explanatory website or even a well-written Wikipedia page. Topics are wide, I hope you'll find what you need. 
 
-Starting with Machine Learning
-----
+## Starting with Machine Learning
+
 
 1. **<http://www.r2d3.us/>** A **beginner's** introduction to **machine learning** (with decision trees), how it works and what is at stake. The website is amazingly beautiful and didactical. If you're ehre, on *this* page, you probably won't need to read through that. But still, it's too good to miss. And worth sharing with everyone. [Translations available in French, Russian and Chinese]
 
@@ -41,8 +41,8 @@ Starting with Machine Learning
 5. **<https://github.com/Vict0rSch/data_science_polytechnique>** Learn more on a few broad machine learning topics with these assignment descriptions and slides
 
 
-Starting with Deep Learning
----
+## Starting with Deep Learning
+
 1. **<http://neuralnetworksanddeeplearning.com/>** This is a **_[goldmine](https://www.google.fr/search?q=goldmine&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjetPXx-qPKAhUHnBoKHZorD_EQ_AUIBygB&biw=1280&bih=678)_** to start with Deep Learning and understand neural networks. It starts from scratch, and takes you through the **backpropagation** algorithm, **regularization**, tips to train your networks etc. up to explaining **convolutional** networks and introducing recurrent ones. It needs very little maths and uses a simple Python code to wallk you through the **implementation** of feedforward and convolutional neural nets.
 
 	_This is where I started with Deep Learning and I want to **thank [M. Nielsen](http://michaelnielsen.org/)** for his very informative and pedagogical work._
@@ -51,8 +51,8 @@ Starting with Deep Learning
 
 3. **<https://www.udacity.com/course/deep-learning--ud730>** This is [Google](http://googleresearch.blogspot.mx/2016/01/teach-yourself-deep-learning-with.html)'s Deep Learning MOOC with Udacity. They use Tensorflow rather than Theano (of course, TensorFlow it theirs...)  but they do tackle issues that do not depend on your programming framework. Moreover, Keras can use TensorFlow as a backend.
 	
-Reading papers
----
+## Reading papers
+
 If you like reading papers and read a lot of papers (or at least once a month) I suggest you download and use **[Mendeley](https://www.mendeley.com/dashboard/)**:
 > Free reference manager and PDF organizer
 
@@ -61,8 +61,8 @@ The point is that you will be able to store and organize the papers you read to 
 I do not know if it is the best tool you can find, it's just that I use it and like it.
 	
 
-General Deep Learning papers and books
----
+## General Deep Learning papers and books
+
 
 1. **[Deep Learning review](http://www.nature.com/articles/nature14539.epdf?referrer_access_token=K4awZz78b5Yn2_AoPV_4Y9RgN0jAjWel9jnR3ZoTv0PU8PImtLRceRBJ32CtadUBVOwHuxbf2QgphMCsA6eTOw64kccq9ihWSKdxZpGPn2fn3B_8bxaYh0svGFqgRLgaiyW6CBFAb3Fpm6GbL8a_TtQQDWKuhD1XKh_wxLReRpGbR_NdccoaiKP5xvzbV-x7b_7Y64ZSpqG6kmfwS6Q1rw%3D%3D&tracking_referrer=www.nature.com)** in *Nature* (2015) by Y. LeCun, Y. Bengio and G. Hinton
 
@@ -132,8 +132,8 @@ obtaining state-of-the-art results on many benchmark data sets.
 	>Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout. **Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin**. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.9% top-5 validation error (and 4.8% test error), exceeding the accuracy of human raters.
 	
 
-On Recurrent Neural Networks
----
+## On Recurrent Neural Networks
+
 
 1. Check out A. Karpathy's famous blog post on **[The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)**
 
@@ -201,8 +201,8 @@ machine translation.
 
 	>Deep Neural Networks (DNNs) are powerful models that have achieved excel- lent performance on difficult learning tasks. Although DNNs work well whenever large labeled training sets are available, they cannot be used to map sequences to sequences. In this paper, we present a general end-to-end approach to sequence learning that makes minimal assumptions on the sequence structure. Our method uses amultilayered Long Short-TermMemory (LSTM) tomap the input sequence to a vector of a fixed dimensionality, and then another deep LSTM to decode the target sequence from the vector. Our main result is that on an English to French translation task from the WMT-14 dataset, the translations produced by the LSTM achieve a BLEU score of 34.8 on the entire test set, where the LSTM’s BLEU score was penalized on out-of-vocabulary words. Additionally, the LSTM did not have difficulty on long sentences. For comparison, a phrase-based SMT system achieves a BLEU score of 33.3 on the same dataset. When we used the LSTM to rerank the 1000 hypotheses produced by the aforementioned SMT system, its BLEU score increases to 36.5, which is close to the previous state of the art. The LSTM also learned sensible phrase and sentence representations that are sensitive to word order and are relatively invariant to the active and the passive voice. Fi- nally, we found that reversing the order of the words in all source sentences (but not target sentences) improved the LSTM’s performancemarkedly, because doing so introduced many short term dependencies between the source and the target sentence which made the optimization problem easier.
 
-Other
----
+## Other
+
 1. **<http://cs.stanford.edu/people/karpathy/convnetjs/demo/mnist.html>** run convolutional neural networks in your browser using JavaScript (by [@Karpathy](https://github.com/karpathy))
 
 2. **<http://timdettmers.com/>** Is Tim Demetters's blog with really interesting posts, mainly about using the GPU with neural networks:
@@ -212,8 +212,8 @@ Other
 	*  See also his introduction to Deep Learning on Nvidia's website [Part 1](http://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-history-training/) & [Part 2](http://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-core-concepts/)
 
 
-Reading lists
----
+## Reading lists
+
 The following are insanely good, exhaustive and pertinent reading/resources lists. I suggest you browse them because my point here is not to compete with them.
 
 1. **<https://github.com/ujjwalkarn/Machine-Learning-Tutorials>** A general list on a **lot** of **machine learning** fields. 

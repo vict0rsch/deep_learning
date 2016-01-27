@@ -1,4 +1,4 @@
-#Lasagne Tutorial
+#Lasagne Feedforward Tutorial
 
 This section will walk you through the code of [`feedforward_lasagne_mnist.py`](feedforward_lasagne_mnist.py), which I suggest you have open while reading. This tutorial is widely based on the [Lasagne mnist example](https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py). This official example is really well built and detailed, especially the comments in the code. The purpose here is to simplify a little bit the original code, make it similar to our [Keras example](../keras/) and understand in details what is happenning, when and why. 
 
@@ -14,7 +14,7 @@ By the way, Lasagne's documentation is really good, detailed and cites papers. A
 
 **/!\\** Be aware that Lasagne relies heavily on Theano and that understanding it is **necessary** to be able to use Lasagne. The [introduction](../theano.md) is the minimum required but knowing Theano in greater details could be a good idea...
 
-#Feedforward Lasagne mnist
+# Recognizing handwritten digits with Lasagne 
 
 Table of Contents
 ---
@@ -282,7 +282,7 @@ Finally we print the relevant quantities and return the network (which is, again
 As an exercise (very easy...) you could try to implement the LossHistory callback from the [Keras example](../keras/).
 
 A more difficult example is to modify the code so as to be able to retrain a network (passing `network=None` as parameters to `run_network()` is the easiest part). 
-##Usage
+## Usage
 
 ```python
 import feedforward_lasagne_mnist as flm

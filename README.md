@@ -1,16 +1,15 @@
 # Deep-Learning
 
-Table Of Contents
----
+## Table Of Contents
 
 **[Presentation](#presentation)**  
 
-**[How to Learn from this Tutorial](#how-to-use)** 
+**[How to Learn from this Tutorial](#how-to-learn-from-this-tutorial)** 
  
 **[The Toothbrush Technique](#the-toothbrush-technique)**
 
-Presentation
----
+## Presentation
+
 
 This repository contains Deep Learning *implementations* tutorials. For more general knowledge regarding Machine/Deep Learning, have a look at **[useful_resources.md](/useful_resources.md)**. 
 
@@ -30,8 +29,8 @@ I have not worked a lot with Convolutional Networks so I won't mention them here
 |:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|:--------:|
 |[![i1][setup-image]](/setup.md)|[![i2][theano-image]](/theano.md)|[![i3][keras-image]](/keras)|[![i4][lasagne-image]](/lasagne)|[![i6][recurrent-image]](/recurrent.md)| [![i5][resources-image]](/useful_resources.md) |[![i6][time-image]](http://9gag.com/)|
 
-How to Learn from this Tutorial
----
+## How to Learn from this Tutorial
+
 Machine learning is a vast area. Time and concentration are the two things you need the most to get into it. Don't jump to the next step if you're not sure you're clear with the present one's outcomes. 
 
 
@@ -79,8 +78,8 @@ Machine learning is a vast area. Time and concentration are the two things you n
 
 
 
-The Toothbrush Technique
----
+## The Toothbrush Technique
+
 The Toothbrush technique is used to debug code. The concept is easy: pick up your toothbrush, a pen or a spoon and walk it through your code as if they understood it. Better yet use a friend or coworker: you won't need their brain, rather their ears. 
 
 The thing is that debugging can be hard and the error might very well be silly. However looking as someone else's code is often hard and/or laborious, so asking a friend/coworker to debug it is hardly possible.  

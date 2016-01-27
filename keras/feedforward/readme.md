@@ -1,4 +1,4 @@
-#Keras Tutorial
+# Keras Feedforward Tutorial
 
 This section will walk you through the code of [`feedforward_keras_mnist.py`](feedforward_keras_mnist.py), which I suggest you have open while reading. This tutorial is based on several Keras examples and from it's documentation :
 
@@ -13,7 +13,7 @@ By the way, Keras's documentation is better and better (and it's already good) a
 ####[Keras Documentation](http://keras.io/)
 ####[Keras's Github](https://github.com/fchollet/keras)
 
-#Feedforward Keras mnist
+# Recognizing handwritten digits with Keras
 
 Table of Contents
 ---
@@ -34,7 +34,7 @@ Table of Contents
 **[Usage](#usage)**      
 
 
-##General orginization
+## General orginization
 
 We start with importing everything we'll need (no shit...). Then we define the `callback` class that will be used to store the loss history. Lastly we define functions to load the data, compile the model, train it and plot the losses. 
 
@@ -44,7 +44,7 @@ Also, don't forget the Python's `reload(package)`
 function, very useful to run updates from your code without quitting (I)python.
 
 
-##Imports
+## Imports
 
 ```python
 import time
@@ -67,7 +67,7 @@ Dense` layer, or treat them as `layers` that will apply to the `model`'s last 'r
 * `optimizers` are the optimization algorithms such as the classic [Stochastic Gradient Descent](http://keras.io/optimizers/#sgd). We will use `RMSprop` (see [here](https://www.youtube.com/watch?v=O3sxAc4hxZU) G. Hinton's explanatory video and [there](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) the slides) 
 * `datasets` (in our case) will download the mnist dataset if it is not already in `~/.keras/datasets/` and load it into `numpy` arrays. 
 
-##Callback
+## Callback
 
 ```python
 class LossHistory(cb.Callback):
@@ -211,7 +211,7 @@ def plot_losses(losses):
 ```
 Nothing much here, just that it is helpful to monitor the loss during training but you could provide any list here of course. 
 
-##Usage
+## Usage
 ```python
 import feedforward_keras_mnist as fkm
 
