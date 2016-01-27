@@ -51,10 +51,14 @@ Machine learning is a vast area. Time and concentration are the two things you n
 
 
 4. Get into some code 
-	* Start easy with Keras and feedforward networks -> [Keras](/keras/feedforward/)
+
+	a - Start easy with Keras and feedforward networks -> [Keras](/keras/feedforward/)
+
 	   * **Requirements**: Python + outcomes (1) and (2)
-	   * **Outcomes**: Understand how the Keras framework can be used and therefore implement any dense feedforward network you like.  
-	* Go into the details with Lasagne (still with feedforward networks) -> [Lasagne](/lasagne/feedforward/)
+	   * **Outcomes**: Understand how the Keras framework can be used and therefore implement any dense feedforward network you like.
+  
+	b - Go into the details with Lasagne (still with feedforward networks) -> [Lasagne](/lasagne/feedforward/)
+
 	   * **Requirements**: Python + outcomes (1), (2) and (3)
 	   * **Outcomes**: Understand how the Lasagne framework can be used and therefore implement any dense feedforward network you like. Understand the differences with Keras.
 

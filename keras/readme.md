@@ -1,6 +1,6 @@
 #Keras Tutorials : Feedforward or Recurrent?
 
-[![i1][feedforward]](feedforward_keras_mnist_tutorial.md)[![i2][recurrent]](recurrent_keras_power_tutorial.md)
+[![i1][feedforward]](feedforward/)[![i2][recurrent]](recurrent/)
 
 (chose left or right wisely)
 
