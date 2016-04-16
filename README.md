@@ -8,6 +8,8 @@
  
 **[The Toothbrush Technique](#the-toothbrush-technique)**
 
+**[Disclaimer](#disclaimer)**
+
 ## Presentation
 
 
@@ -86,6 +88,11 @@ The thing is that debugging can be hard and the error might very well be silly. 
 On the other hand, explaining it to your toothbrush makes you rethink the whole coding process you went through and hopefully find that (silly?) mistake or incoherence. 
 
 Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to learn more.
+
+
+## Disclaimer
+
+*I am currently on a trip until August. I will then continue the work. And probably migrate to a blog to make it easier to communicate and implement improvements*
 
 <br> 
 
