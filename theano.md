@@ -38,7 +38,7 @@ Regarding our purpose here, Theano's main features to remember are:
 
 ## Theano's graph
 
-[Theano's Symbolic Graph](http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html)
+[Theano's Symbolic Graph](http://deeplearning.net/software/theano/extending/graphstructures.html#graphstructures)
 
 I **strongly** recommend you spend the time you need to understand the explanation from the link above. However here is a very short summary.
 
@@ -56,7 +56,7 @@ z = x + y
 ```
 ![Theano graph illustration](http://deeplearning.net/software/theano/_images/apply1.png)
 
-In this code example (from [Theano's Symbolic Graph](http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html)), `x` and `y` are declared variables, they are going to be used afterwards. Then `z` is defined as an expression depending on `x`and `y`. Theano generates the above graph to link variables and operations together.
+In this code example (from [Theano's Symbolic Graph](http://deeplearning.net/software/theano/extending/graphstructures.html#graphstructures)), `x` and `y` are declared variables, they are going to be used afterwards. Then `z` is defined as an expression depending on `x`and `y`. Theano generates the above graph to link variables and operations together.
 
 To evaluate `z` on numerical values of `x` and `y` (say 4 and 1 for instance), you will need functions.
 
