@@ -88,7 +88,7 @@ array([[ 0.5       ,  0.73105858],
 
 So here we declare a Theano variable `x`. Then we define another variable, `sigmoid`, as an expression of `x`. We then declare the Theano function `logistic`, that compiles and optimizes the execution graph linking `sigmoid` and `x`. Finaly we give `logistic` a numerical application using `example`.
 
-Theano functions are way richer thant that so I suggest you go and look at least into **[Params](http://deeplearning.net/software/theano/tutorial/examples.html#setting-a-default-value-for-an-argument)**, **[Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)** and  **Updates** (4th paragraph in [Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)) (not knowing about Shared Variables is missing a huge part of how Theano works and they are needed for Lasagne).
+Theano functions are way richer than that so I suggest you go and look at least into **[Params](http://deeplearning.net/software/theano/tutorial/examples.html#setting-a-default-value-for-an-argument)**, **[Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)** and  **Updates** (4th paragraph in [Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)) (not knowing about Shared Variables is missing a huge part of how Theano works and they are needed for Lasagne).
 
 
 ## Variables
