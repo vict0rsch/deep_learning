@@ -38,7 +38,7 @@ Regarding our purpose here, Theano's main features to remember are:
 
 ## Theano's graph
 
-[Theano's Symbolic Graph](http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html)
+[Theano's Symbolic Graph](http://deeplearning.net/software/theano/extending/graphstructures.html#graphstructures)
 
 I **strongly** recommend you spend the time you need to understand the explanation from the link above. However here is a very short summary.
 
@@ -56,7 +56,7 @@ z = x + y
 ```
 ![Theano graph illustration](http://deeplearning.net/software/theano/_images/apply1.png)
 
-In this code example (from [Theano's Symbolic Graph](http://deeplearning.net/software/theano/tutorial/symbolic_graphs.html)), `x` and `y` are declared variables, they are going to be used afterwards. Then `z` is defined as an expression depending on `x`and `y`. Theano generates the above graph to link variables and operations together.
+In this code example (from [Theano's Symbolic Graph](http://deeplearning.net/software/theano/extending/graphstructures.html#graphstructures)), `x` and `y` are declared variables, they are going to be used afterwards. Then `z` is defined as an expression depending on `x`and `y`. Theano generates the above graph to link variables and operations together.
 
 To evaluate `z` on numerical values of `x` and `y` (say 4 and 1 for instance), you will need functions.
 
@@ -88,7 +88,7 @@ array([[ 0.5       ,  0.73105858],
 
 So here we declare a Theano variable `x`. Then we define another variable, `sigmoid`, as an expression of `x`. We then declare the Theano function `logistic`, that compiles and optimizes the execution graph linking `sigmoid` and `x`. Finaly we give `logistic` a numerical application using `example`.
 
-Theano functions are way richer thant that so I suggest you go and look at least into **[Params](http://deeplearning.net/software/theano/tutorial/examples.html#setting-a-default-value-for-an-argument)**, **[Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)** and  **Updates** (4th paragraph in [Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)) (not knowing about Shared Variables is missing a huge part of how Theano works and they are needed for Lasagne).
+Theano functions are way richer than that so I suggest you go and look at least into **[Params](http://deeplearning.net/software/theano/tutorial/examples.html#setting-a-default-value-for-an-argument)**, **[Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)** and  **Updates** (4th paragraph in [Shared Variables](http://deeplearning.net/software/theano/tutorial/examples.html#using-shared-variables)) (not knowing about Shared Variables is missing a huge part of how Theano works and they are needed for Lasagne).
 
 
 ## Variables
