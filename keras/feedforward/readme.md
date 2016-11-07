@@ -133,13 +133,13 @@ def init_model():
     model.add(Activation('softmax'))
 
     rms = RMSprop()
-    model.compile(loss='categorical_crossentropy', optimizer=rms)
+    model.compile(loss='categorical_crossentropy', optimizer=rms, metrics=['accuracy'])
     print 'Model compield in {0} seconds'.format(time.time() - start_time)
     return model
 ```
 
 Here is the core of what makes your neural network : the `model`.  
-We begin with creating an instance of the `Sequential` model. Then we add a couple hidden layers and an output layer. After that we instanciate the `rms` optimizer that will update the network's parameters according to the RMSProp algorithm. Lastly we compile the model with the [`categorical_crossentropy`](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#tensor.nnet.categorical_crossentropy) cost / loss / objective function and the optimizer.
+We begin with creating an instance of the `Sequential` model. Then we add a couple hidden layers and an output layer. After that we instanciate the `rms` optimizer that will update the network's parameters according to the RMSProp algorithm. Lastly we compile the model with the [`categorical_crossentropy`](http://deeplearning.net/software/theano/library/tensor/nnet/nnet.html#tensor.nnet.categorical_crossentropy) cost / loss / objective function and the optimizer. We also state we want to see the accuracy during fitting and testing.
 
 Let's get into the model's details :
 
@@ -172,12 +172,11 @@ def run_network(data=None, model=None, epochs=20, batch=256):
 
         print 'Training model...'
         model.fit(X_train, y_train, nb_epoch=epochs, batch_size=batch,
-                  callbacks=[history], show_accuracy=True,
+                  callbacks=[history],
                   validation_data=(X_test, y_test), verbose=2)
 
         print "Training duration : {0}".format(time.time() - start_time)
-        score = model.evaluate(X_test, y_test, batch_size=16,
-                               show_accuracy=True)
+        score = model.evaluate(X_test, y_test, batch_size=16)
 
         print "Network's test score [loss, accuracy]: {0}".format(score)
         return model, history.losses
@@ -196,7 +195,6 @@ So first we load the data, create the model and start the loss history. All ther
 * `nb_epoch` is perfecty transparent and `epochs` is defined when calling the `run_network`function. 
 * `batch_size`idem as `nb_epoch`. Keras does all the work for you regarding epochs and batch training. 
 * `callbacks` is a list of callbacks. Here we only provide `history` but you could provide any number of callbacks. 
-* `show_accuracy` is set to true so that during the training Keras shows the training accuracy.
 * `validation_data` is, well, the validation data. Here we use the test data but it could be different. Also you could specify a `validation_split` float between 0 and 1 instead, spliting the training data for validation.  
 * `verbose = 2` so that Keras displays both the training and validation loss and accuracy. 
 
