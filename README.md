@@ -87,7 +87,7 @@ The Toothbrush technique is used to debug code. The concept is easy: pick up you
 The thing is that debugging can be hard and the error might very well be silly. However looking as someone else's code is often hard and/or laborious, so asking a friend/coworker to debug it is hardly possible.  
 On the other hand, explaining it to your toothbrush makes you rethink the whole coding process you went through and hopefully find that (silly?) mistake or incoherence. 
 
-Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to learn more.
+Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to learn more or see the [Feynman technique](https://www.youtube.com/watch?v=tkm0TNFzIeg), the Nobel prize's famous technique to understand and remember things.
 
 
 ## Disclaimer
