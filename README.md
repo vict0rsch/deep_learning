@@ -31,6 +31,9 @@ I have not worked a lot with Convolutional Networks so I won't mention them here
 |:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|:--------:|:--------:|
 |[![i1][setup-image]](/setup.md)|[![i2][theano-image]](/theano.md)|[![i3][keras-image]](/keras)|[![i4][lasagne-image]](/lasagne)|[![i6][recurrent-image]](/recurrent.md)| [![i5][resources-image]](/useful_resources.md) |[![i7][cloud-image]](aws_gpu.md)|[![i6][time-image]](http://9gag.com/)|
 
+## Amazon Instances
+You will find that Neural Network computations are very expensive and slow on CPUs. This is why all(?) such frameworks are GPU-accelerated. What if you don't have access to a GPU? You can still use Amazon's computers for ~1€/hour. See my attempt to a tutorial [here](aws_gpu.md).
+
 ## How to Learn from this Tutorial
 
 Machine learning is a vast area. Time and concentration are the two things you need the most to get into it. Don't jump to the next step if you're not sure you're clear with the present one's outcomes. 
