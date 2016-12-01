@@ -2,6 +2,9 @@
 
 -----
 
+#SORRY DISREGARD MY AMI
+Currently going through unforseen issues with the gpu so my AMI does not work ; consider using Stanford's `cs_224D` community AMI in the same region. The rest of the tutorial holds.
+
 # Launch your Amazon GPU instance
 
 The purpose here is to get you to launch an Amazon instance from an AMI.
