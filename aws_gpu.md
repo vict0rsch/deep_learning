@@ -1,3 +1,7 @@
+*Disclaimer : I am not an expert, this is only a small contribution from a self(internet)-taught beginner with AWS who wants to synthesize what he's learned. And I'm happy to learn even more if this is incorrect or (surely) improvable*
+
+-----
+
 # Launch your Amazon GPU instance
 
 The purpose here is to get you to launch an Amazon instance from an AMI.
