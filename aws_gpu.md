@@ -34,8 +34,19 @@ To save you some time here is what you've got to do : go to http://aws.amazon.co
 
 I asked for a "Web" contact method and they got back to me in **2 business days**. So if you're in a hurry maybe the phone method is faster. I don't know. People with experience could elaborate on that. 
 
+___
+## 0. In a nutshell
 
-## Selecting an AMI
+1. Go to EC2 instances in North California region
+2. Select `vict0rsch-1.0` community AMI
+3. Select `g2.2xlarge` instance
+4. Set up Security group
+5. Download RSA private key
+6. Connect *via* ssh : `ssh -i key.pem ubuntu@address`
+
+___
+
+## 1. Selecting an AMI
 
 #### Region
 
@@ -47,7 +58,7 @@ Now in "Services" (top left) select EC2 and click that big beautiful blue button
 
 You'll be asked to "Choose an Amazon Machine Image (AMI)". On the left, click "**Community AMIs**", look for `vict0rsch-1.0` and select it.
 
-## Lauching the instance
+## 2. Lauching the instance
 
 #### Choose an Instance Type
 
@@ -75,7 +86,7 @@ You can create a new key at every instance launch but you will need the declared
 
 OK! Your instance is being launched by Amazon, click on the blue link with the instance ID or go to your console (it's the same anyway) and go in the "**Instances**" tab. It will only take a few minutes before it's running and you can connect to it.
 
-## Connecting to the instance
+## 3. Connecting to the instance
 
 #### SSH
 
@@ -118,16 +129,16 @@ By default your instance can connect anywhere. You can change that (or make it s
 To do so, from the "Instances" tab, go to the far right of your running instance's line and click on its security group link. Then click on the bottom "Outbound" tab and edit the rules. If you see `All traffic | All | All | 0.0.0.0/0` it means, obviously, that the instance can do whatever it wants!
 
 
-## GUI Text editor
+## 4. GUI Text editor
 
 You can use Sublime Text **2** (not 3 saddly) to edit your remote files from your own computer using **[rsub](https://github.com/Drarok/rsub)**.
 
 
-## Test
+## 5. Test
 
 There should be a `test` directory in your home. You can run these files to check that Lasagne, Keras and Tensorflow are working. Keras will use the Tensorflow backend.
 
-## End of work
+## 6. End of work
 
 You've done some nonesense for a while, now playtime is over. If you keep your instance running Amazon's going to keep billing you. You can either stop or terminate your instance. 
 
@@ -145,14 +156,14 @@ You'll re-use this instance soon enough. Its volumes are kept in Amazon Elastic 
 
 [More](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html) and [more](http://docs.rightscale.com/faq/clouds/aws/Whats_the_difference_between_Terminating_and_Stopping_an_EC2_Instance.html) and [more](https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Ff2%2Fde%2F6d%2Ff2de6d3610642b866edcf76f7f86129a.jpg&f=1).
 
-## Improvements
+## 7. Improvements
 
 You can either suggest improvements [here](https://forums.aws.amazon.com/thread.jspa?threadID=244014), build your own AMI from this one or from scratch -> see [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html). 
 
 As far as this very tutorial is concerned, please pull-request edits, corrections, improvement suggestions and use issues to get help. I'm however far from being experienced with this... Let's hope there will be someone somewhere in the community  to help you. Or stackoverflow may be a good idea.
 
 
-## Pricing
+## 8. Pricing
 
 I won't go into details here but roughly speaking you are charged **per hour** and according to the volume of your (S3) **snapshots** and (EBS) **volumes**. 
 
