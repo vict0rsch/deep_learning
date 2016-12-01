@@ -95,7 +95,7 @@ Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to
 
 ## Disclaimer
 
-*I am currently on a trip until August. I will then continue the work. And probably migrate to a blog to make it easier to communicate and implement improvements*
+*I am currently an MSc. student so I don't have much time to improve regularly this tutorial and solve issues but I'll do my best. If you have some experience and would like to contribute get in touch and anyway feel free to send pull requests. Also I am considering using a blog. I don't know yet which platform to use however.*
 
 <br> 
 
