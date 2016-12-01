@@ -41,7 +41,7 @@ I assume you have created an AWS account. The AMI we are going to use (mine, fee
 
 Now in "Services" (top left) select EC2 and click that big beautiful blue button that says "Launch Instance".
 
-You'll be asked to "Choose an Amazon Machine Image (AMI)". On the left, click "**Community AMIs**", look for `vict0rsch 1.0` and select it.
+You'll be asked to "Choose an Amazon Machine Image (AMI)". On the left, click "**Community AMIs**", look for `vict0rsch-1.0` and select it.
 
 ## Lauching the instance
 
