@@ -27,9 +27,9 @@ See the official Theano tutorial [here](http://deeplearning.net/software/theano/
 
 I have not worked a lot with Convolutional Networks so I won't mention them here, for now.
 
-| Set up  | Theano   | Keras | Lasagne |Recurrent| Resources | Lose Time |
-|:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|:--------:|
-|[![i1][setup-image]](/setup.md)|[![i2][theano-image]](/theano.md)|[![i3][keras-image]](/keras)|[![i4][lasagne-image]](/lasagne)|[![i6][recurrent-image]](/recurrent.md)| [![i5][resources-image]](/useful_resources.md) |[![i6][time-image]](http://9gag.com/)|
+| Set up  | Theano   | Keras | Lasagne |Recurrent| Resources | AWS + GPU | Lose Time |
+|:---------:|:----------:|:-------:|:---------:|:-----------:|:-----------:|:--------:|:--------:|
+|[![i1][setup-image]](/setup.md)|[![i2][theano-image]](/theano.md)|[![i3][keras-image]](/keras)|[![i4][lasagne-image]](/lasagne)|[![i6][recurrent-image]](/recurrent.md)| [![i5][resources-image]](/useful_resources.md) |[![i7][cloud-image]](aws_gpu.md)|[![i6][time-image]](http://9gag.com/)|
 
 ## How to Learn from this Tutorial
 
@@ -96,7 +96,7 @@ Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to
 
 <br> 
 
-<sub>Icons made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+<sub>Icons made by [Freepik](http://www.freepik.com) and [Gregor Cresnar](http://www.flaticon.com/authors/gregor-cresnar) from [Flaticon](http://www.flaticon.com) licensed by [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) and [Favicon basic license](http://file000.flaticon.com/downloads/license/license.pdf)
 	
 	
 [theano-image]: http://s18.postimg.org/cuim8chtx/four56.png
@@ -106,4 +106,4 @@ Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to
 [setup-image]: http://s2.postimg.org/hgrwawlid/three115.png
 [time-image]: http://s22.postimg.org/y0v2jhcf1/clock164.png
 [recurrent-image]: http://s12.postimg.org/fdm1mirux/graph16.png
-
+[cloud-image]: http://s4.postimg.org/99096dk9p/cloud_computing.png
