@@ -3,7 +3,7 @@
 -----
 
 #SORRY DISREGARD MY AMI
-Currently going through unforseen issues with the gpu so my AMI does not work ; consider using Stanford's `cs_224D` community AMI in the same region. The rest of the tutorial holds.
+Currently going through unforseen issues with the gpu so my AMI does not work ; consider using Stanford's `CS224d` community AMI in the same region. The rest of the tutorial holds.
 
 # Launch your Amazon GPU instance
 
