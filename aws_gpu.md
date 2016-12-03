@@ -106,16 +106,6 @@ We'll use te flag `-i` to specify that we use an identity file i.e. the key we d
 
 Accept to add the RSA key and there you are! You should be prompted with something like `ubuntu@ip-172-31-5-202:~$`
 
-#### Permission denied (publickey)
-
-If you are prompted with this **error** or the operation is timed out it can mean:
-
-* Your instance is not running (yet?)
-* That you are not using the right RSA key
-* You are trying to log into another machine (wrong address)
-* You are trying to log in with the wrong user 
-* Your instance does not allow your IP (so go and add it in its security group)
-
 #### SCP
 
 To **copy** (transfer) files from your computer to the instance use `scp` as follows : 
@@ -123,6 +113,22 @@ To **copy** (transfer) files from your computer to the instance use `scp` as fol
 `scp -i path_to_key/key.pem file_on_your_computer ubuntu@ec2-54-183-195-215.us-west-1.compute.amazonaws.com:path_on_remote_instance`
 
 Add the flags `-rp` to transfer directories.
+
+#### SSH - SCP Errors
+
+If you are prompted with the  `Permission denied (publickey)`**error** or the operation is timed out it can mean:
+
+* Your instance is not running (yet?)
+* That you are not using the right RSA key
+* You are trying to log into another machine (wrong address)
+* You are trying to log in with the wrong user 
+* Your instance does not allow your IP (so go and add it in its security group)
+
+I also had `Connection closed by <address>` errors. So far the only way I found was to create a new KeyPair from the Amazon console. You can save your progress by taking a snapshot, terminating the instance and starting a new one with a new KeyPair from the snapshot.
+
+If the `scp` command does not say anything and fails, check that you did not forget the path on the remote host at the end of the address : `[...].com:~/` for instance.
+
+Anyway you can have `scp` and `ssh` be more verbose using `-v` `-vv` or `-vvv` depending on the details you want.
 
 #### Outbound connections
 
