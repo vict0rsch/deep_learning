@@ -2,9 +2,6 @@
 
 -----
 
-#SORRY DISREGARD MY AMI
-Currently going through unforseen issues with the gpu so my AMI does not work ; consider using Stanford's `CS224d` community AMI in the same region. The rest of the tutorial holds.
-
 # Launch your Amazon GPU instance
 
 The purpose here is to get you to launch an Amazon instance from an AMI.
@@ -19,8 +16,10 @@ It will (mainly) have :
 * Cuda 8.0 ("parallel computing platform and programming model", used to send code to the GPU)
 * cuDNN (Cuda's library for Deep Learning used by Tensorflow and Theano)
 * [Tensorflow](https://www.tensorflow.org/) 0.10 for Python 3.5 and GPU-enabled
-* [Theano](http://deeplearning.net/software/theano/index.html) 0.8
-* [Keras](https://keras.io/) 1.1.2
+* [Keras](https://keras.io/) 1.1.2 (use with Tensorflow backend)
+
+To be done:
+* [Theano](http://deeplearning.net/software/theano/index.html) 0.8 I currently have issues during `theano.test()` if anyone wants to help
 * [Lasagne](http://lasagne.readthedocs.io/en/latest/index.html) 0.1
 
 This AMI can be seen as a list of softwares, it does not specify the hardware you are going to use. Therefore the 3 main steps of this tutorial will be :
@@ -137,11 +136,7 @@ To do so, from the "Instances" tab, go to the far right of your running instance
 You can use Sublime Text **2** (not 3 saddly) to edit your remote files from your own computer using **[rsub](https://github.com/Drarok/rsub)**.
 
 
-## 5. Test
-
-There should be a `test` directory in your home. You can run these files to check that Lasagne, Keras and Tensorflow are working. Keras will use the Tensorflow backend.
-
-## 6. End of work
+## 5. End of work
 
 You've done some nonesense for a while, now playtime is over. If you keep your instance running Amazon's going to keep billing you. You can either stop or terminate your instance. 
 
@@ -159,7 +154,7 @@ You'll re-use this instance soon enough. Its volumes are kept in Amazon Elastic 
 
 [More](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html) and [more](http://docs.rightscale.com/faq/clouds/aws/Whats_the_difference_between_Terminating_and_Stopping_an_EC2_Instance.html) and [more](https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Ff2%2Fde%2F6d%2Ff2de6d3610642b866edcf76f7f86129a.jpg&f=1).
 
-## 7. Improvements
+## 6. Improvements
 
 You can either suggest improvements [here](https://forums.aws.amazon.com/thread.jspa?threadID=244014), build your own AMI from this one or from scratch -> see [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html). 
 
