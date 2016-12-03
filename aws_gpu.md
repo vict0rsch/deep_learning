@@ -76,7 +76,7 @@ In "Source" click on **My IP**, and the line should look like `ssh | TCP | 22 | 
 
 #### Storage
 
-The whole setup takes a bit more than 9GB so consider using a 16GB instance or more depending on your needs! See the "Storage" tab (no shit...).
+The whole setup takes a bit more than 9GB. By default the AMI makes the instance have 24GB storage. See the "Storage" tab (no shit...) to edit this according to your needs.
 
 Now "**Launch**" !
 
