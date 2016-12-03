@@ -10,12 +10,12 @@ What the hell is an AMI? It is an Amazon Machine Image, which basically describe
 
 It will (mainly) have :
 
-* Ubuntu Server 16 as OS
-* [Anaconda](https://www.continuum.io/) (scientific Python distribution)
+* Ubuntu Server 16.04 as OS
+* [Anaconda](https://www.continuum.io/) 4.2.0 (scientific Python distribution)
 * Python 3.5
 * Cuda 8.0 ("parallel computing platform and programming model", used to send code to the GPU)
-* cuDNN (Cuda's library for Deep Learning used by Tensorflow and Theano)
-* [Tensorflow](https://www.tensorflow.org/) 0.10 for Python 3.5 and GPU-enabled
+* cuDNN 5.1 (Cuda's library for Deep Learning used by Tensorflow and Theano)
+* [Tensorflow](https://www.tensorflow.org/) 0.12 for Python 3.5 and GPU-enabled
 * [Keras](https://keras.io/) 1.1.2 (use with Tensorflow backend)
 
 To be done:
