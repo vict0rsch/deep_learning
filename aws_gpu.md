@@ -167,7 +167,7 @@ You can either suggest improvements [here](https://forums.aws.amazon.com/thread.
 As far as this very tutorial is concerned, please pull-request edits, corrections, improvement suggestions and use issues to get help. I'm however far from being experienced with this... Let's hope there will be someone somewhere in the community  to help you. Or stackoverflow may be a good idea.
 
 
-## 8. Pricing
+## 7. Pricing
 
 I won't go into details here but roughly speaking you are charged **per hour** and according to the volume of your (S3) **snapshots** and (EBS) **volumes**. 
 
