@@ -18,9 +18,10 @@ It will (mainly) have :
 * [Tensorflow](https://www.tensorflow.org/) 0.12 for Python 3.5 and GPU-enabled
 * [Keras](https://keras.io/) 1.1.2 (use with Tensorflow backend)
 
-To be done:
+*To be done:*
 * [Theano](http://deeplearning.net/software/theano/index.html) 0.8 I currently have issues during `theano.test()` if anyone wants to help
 * [Lasagne](http://lasagne.readthedocs.io/en/latest/index.html) 0.1
+* rsub by default
 
 This AMI can be seen as a list of softwares, it does not specify the hardware you are going to use. Therefore the 3 main steps of this tutorial will be :
 
@@ -141,8 +142,22 @@ To do so, from the "Instances" tab, go to the far right of your running instance
 
 You can use Sublime Text **2** (not 3 saddly) to edit your remote files from your own computer using **[rsub](https://github.com/Drarok/rsub)**.
 
+## 5. Testing
 
-## 5. End of work
+#### Tensorflow's examples
+You can check that everyting runs by going to Tensorflow's examples : `cd ~/anaconda3/lib/python3.5/site-packages/tensorflow/models/image/cifar10` then either `python -m cifar10_train.py` or open an iPython console and `run cifar10_train.py`.
+Tensorflow will first download the data it needs to train and then train displaying this king of line :
+
+> `2016-12-03 18:41:43.992273: step 100, loss = 4.08 (790.8 examples/sec; 0.162 sec/batch)`
+
+You can check that this training speed is quite good compared to what they get [here](https://www.tensorflow.org/versions/r0.12/tutorials/deep_cnn/index.html).
+
+#### Your own work
+Once you're logged in your instance, you're basically within a GUI-free Ubuntu machine. Using the `scp` commands described above, you can transfer code and check that it runs as expected (or better!). Also using rsub is quite handy. Hacky testing : `nano my_file.py` then paste your code, `ctr+X` to quit and save (say `yes`) and `python my_file.py`. 
+
+If the instance lacks specific libraries, well just like at home you can `apt-get` and `pip3` (etc.) what you need. However if you terminate the instance whithout saving a snapshot all personal settings will be gone when restarting later from my AMI. See next section.
+
+## 6. End of work
 
 You've done some nonesense for a while, now playtime is over. If you keep your instance running Amazon's going to keep billing you. You can either stop or terminate your instance. 
 
@@ -160,14 +175,15 @@ You'll re-use this instance soon enough. Its volumes are kept in Amazon Elastic 
 
 [More](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html) and [more](http://docs.rightscale.com/faq/clouds/aws/Whats_the_difference_between_Terminating_and_Stopping_an_EC2_Instance.html) and [more](https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Ff2%2Fde%2F6d%2Ff2de6d3610642b866edcf76f7f86129a.jpg&f=1).
 
-## 6. Improvements
+## 7. Improvements + Update form
 
 You can either suggest improvements [here](https://forums.aws.amazon.com/thread.jspa?threadID=244014), build your own AMI from this one or from scratch -> see [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html). 
 
 As far as this very tutorial is concerned, please pull-request edits, corrections, improvement suggestions and use issues to get help. I'm however far from being experienced with this... Let's hope there will be someone somewhere in the community  to help you. Or stackoverflow may be a good idea.
 
+Also I will maintain a TO DO list for the next version of the AMI according to your feedback. I am not sure how this is going to evolve so if you want to be updated sign up to this **[form](https://goo.gl/forms/rutdrahXGJHLvO9h1)**. The use I'll have of this will be mainly to tell you when the next version is out but the most important thing is **I may delete the AMI** (I'm paying for it so I won't have too many of these) after such an upgrade. At which point you may want to snapshot your work to start on the new one so you'll need to know when this is going to happen. 
 
-## 7. Pricing
+## 8. Pricing
 
 I won't go into details here but roughly speaking you are charged **per hour** and according to the volume of your (S3) **snapshots** and (EBS) **volumes**. 
 
