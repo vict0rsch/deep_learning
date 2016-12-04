@@ -140,7 +140,7 @@ To do so, from the "Instances" tab, go to the far right of your running instance
 
 ## 4. GUI Text editor
 
-You can use Sublime Text **2** (not 3 saddly) to edit your remote files from your own computer using **[rsub](https://github.com/Drarok/rsub)**.
+You can use Sublime Text **2** (not 3 saddly) to edit your remote files from your own computer using **[rsub](https://github.com/Drarok/rsub)** See this [tutorial](http://log.liminastudio.com/writing/tutorials/sublime-tunnel-of-love-how-to-edit-remote-files-with-sublime-text-via-an-ssh-tunnel). This means Sublime Text will edit the remote file using `scp` under the hood so you can use your GUI for the EC2 instance.
 
 ## 5. Testing
 
