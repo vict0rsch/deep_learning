@@ -146,7 +146,7 @@ You can use Sublime Text **2** (not 3 saddly) to edit your remote files from you
 
 #### Tensorflow's examples
 You can check that everyting runs by going to Tensorflow's examples : `cd ~/anaconda3/lib/python3.5/site-packages/tensorflow/models/image/cifar10` then either `python -m cifar10_train.py` or open an iPython console and `run cifar10_train.py`.
-Tensorflow will first download the data it needs to train and then train displaying this king of line :
+Tensorflow will first download the data it needs to train and then train displaying this kind of line :
 
 > `2016-12-03 18:41:43.992273: step 100, loss = 4.08 (790.8 examples/sec; 0.162 sec/batch)`
 
@@ -155,7 +155,7 @@ You can check that this training speed is quite good compared to what they get [
 #### Your own work
 Once you're logged in your instance, you're basically within a GUI-free Ubuntu machine. Using the `scp` commands described above, you can transfer code and check that it runs as expected (or better!). Also using rsub is quite handy. Hacky testing : `nano my_file.py` then paste your code, `ctr+X` to quit and save (say `yes`) and `python my_file.py`. 
 
-If the instance lacks specific libraries, well just like at home you can `apt-get` and `pip3` (etc.) what you need. However if you terminate the instance whithout saving a snapshot all personal settings will be gone when restarting later from my AMI. See next section.
+If the instance lacks specific libraries, well just like at home you can `apt-get` and `pip3` (etc.) what you need. However if you terminate the instance whithout saving a snapshot all personal settings will be gone when restarting later from my AMI. See next section. Suggest improvements if you feel like other people are going to need this library and it should be default.
 
 ## 6. End of work
 
