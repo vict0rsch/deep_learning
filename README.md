@@ -20,7 +20,7 @@ Lasagne and Keras are Theano-based so I recommend you get familiar with Theano b
 However **Keras** is way closer to usual Python than Lasagne so it requires a weaker understanding of Theano. The main thing to understand to get started with Keras is Theano's graph structure.
 
 
-We concentrate, in [theano.md](/theano.md), on a few features of Theano that will be needed in Lasagne mostly and just a little in Keras. You will not learn Theano there but get a glimpse at how it works and how it can be used in a Deep Learning context. Theano is about much more than this, especially regarding [GPU](http://deeplearning.net/software/theano/tutorial/using_gpu.html) calculation and [Automatic Differentiation](http://deeplearning.net/software/theano/tutorial/gradients.html).
+We concentrate, in [theano.md](/theano.md), on a few features of Theano that will be needed in Lasagne mostly and just a little in Keras. You will not learn Theano there but get a glimpse at how it works and how it can be used in a Deep Learning context. Theano is about much more than this, especially regarding [GPU](http://deeplearning.net/software/theano/tutorial/using_gpu.html) calculation and [Automatic Differentiation](http://deeplearning.net/software/theano/tutorial/gradients.html). If you use TensorFlow (as a backend for Keras for instance) you can still go through the Theano introduction as Tensorflow's phylosophy on using graphs is very similar : you declare "sessions" instead of "compiling" the graph but the underlying process is conceptually the same.
 
 
 See the official Theano tutorial [here](http://deeplearning.net/software/theano/tutorial/).
