@@ -1,3 +1,7 @@
+# MOVING
+
+I'm moving the tutorial to **[vict0rsch.github.io](http://vict0rsch.github.io)** to make it nicer for you guys. This is an ongoing process and your feedbacks are welcome! Basically it will be betetr organized and there will be comments possible. This repo will stay active for the code, issues, pull requests and collaborations.
+
 # Deep-Learning
 
 ## Table Of Contents
@@ -95,7 +99,7 @@ Contact [Clément](https://www.linkedin.com/in/cl%C3%A9ment-nicolle-18ba2267) to
 
 ## Disclaimer
 
-*I am currently an MSc. student so I don't have much time to improve regularly this tutorial and solve issues but I'll do my best. If you have some experience and would like to contribute get in touch and anyway feel free to send pull requests. Also I am considering using a blog. I don't know yet which platform to use however.*
+*I am currently an MSc. student so I don't have much time to improve regularly this tutorial and solve issues but I'll do my best. If you have some experience and would like to contribute get in touch and anyway feel free to send pull requests. See more at **[vict0rsch.github.io](http://vict0rsch.github.io/about)***
 
 <br> 
 
