@@ -1,3 +1,11 @@
+# MOVING
+
+I'm moving the tutorial to **[vict0rsch.github.io](http://vict0rsch.github.io)** to make it nicer for you guys. This is an ongoing process and your feedbacks are welcome! Basically it will be betetr organized and there will be comments possible. This repo will stay active for the code, issues, pull requests and collaborations.
+
+---
+
+
+
 *Disclaimer : I am not an expert, this is only a small contribution from a self(internet)-taught beginner with AWS who wants to synthesize what he's learned. And I'm happy to learn even more if this is incorrect or (surely) improvable*
 
 -----
