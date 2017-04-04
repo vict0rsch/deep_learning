@@ -1,7 +1,7 @@
 # Keras recurrent tutorial
 
 
-This section will walk you through the code of [`recurrent_keras_power.py`](#recurrent_keras_power.py) which I suggest you have open while reading. 
+This section will walk you through the code of [`recurrent_keras_power.py`](https://github.com/Vict0rSch/deep_learning/blob/master/keras/recurrent/recurrent_keras_power.py) which I suggest you have open while reading. 
 
 This tutorial is mostly homemade, however inspired from Daniel Hnyk's [blog post](http://danielhnyk.cz/predicting-sequences-vectors-keras-using-rnn-lstm/)
 
