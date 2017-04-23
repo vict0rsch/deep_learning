@@ -40,7 +40,7 @@ def data_power_consumption(path_to_dataset,
     print "Shift : ", result_mean
     print "Data  : ", result.shape
 
-    row = round(0.9 * result.shape[0])
+    row = int(round(0.9 * result.shape[0]))
     train = result[:row, :]
     np.random.shuffle(train)
     X_train = train[:, :-1]
@@ -59,8 +59,8 @@ def build_model():
     layers = [1, 50, 100, 1]
 
     model.add(LSTM(
-        input_dim=layers[0],
-        output_dim=layers[1],
+        layers[1],
+        input_shape=(None, layers[0]),
         return_sequences=True))
     model.add(Dropout(0.2))
 
@@ -70,7 +70,7 @@ def build_model():
     model.add(Dropout(0.2))
 
     model.add(Dense(
-        output_dim=layers[3]))
+        layers[3]))
     model.add(Activation("linear"))
 
     start = time.time()
@@ -119,3 +119,7 @@ def run_network(model=None, data=None):
     print 'Training duration (s) : ', time.time() - global_start_time
     
     return model, y_test, predicted
+
+
+if __name__ == '__main__':
+    run_network()
