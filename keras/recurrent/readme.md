@@ -88,7 +88,7 @@ Once all the datapoints are loaded as one large timeseries, we have to **split**
 Neural networks usually learn way better when data is pre-processed (cf Y. Lecun's 1995 [paper](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf), section 4.3). However regarding time-series we do not want the network to learn on data too far from the real world. So here we'll keep it simple and simply center the data to have a `0` mean. 
 
 ```python
-    row = round(0.9 * result.shape[0])
+    row = int(round(0.9 * result.shape[0]))
     train = result[:row, :]
     np.random.shuffle(train)
     X_train = train[:, :-1]
@@ -129,8 +129,8 @@ Also, `layers` is the list containing the sizes of each layer. We are therefore 
 
 ```python
     model.add(LSTM(
-            input_dim=layers[0],
-            output_dim=layers[1],
+            layers[1],
+            input_shape=(None, 1),
             return_sequences=True))
     model.add(Dropout(0.2))
 ```
@@ -148,7 +148,7 @@ Second layer is even simpler to create, we just say how many units we want (`lay
 
 ```python
     model.add(Dense(
-            output_dim=layers[3]))
+            layers[3]))
     model.add(Activation("linear"))
 ```
 The last layer we use is a Dense layer ( = feedforward). Since we are doing a regression, its activation is linear. 
