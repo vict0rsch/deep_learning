@@ -52,7 +52,7 @@ def data_power_consumption(path_to_dataset='household_power_consumption.txt', se
 
     max_values = ratio * 2049280
     
-    with open(path_to_file) as f:
+    with open(path_to_dataset) as f:
         data = csv.reader(f, delimiter=";")
         power = []
         nb_of_values = 0
