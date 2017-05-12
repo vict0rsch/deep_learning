@@ -214,6 +214,7 @@ Also, if the output had a dimension `> 1`, we'd only change the size of the `Den
 def run_network(model=None, data=None):
     epochs = 1
     ratio = 0.5
+    sequence_length = 50
     path_to_dataset = 'household_power_consumption.txt'
     
     if data is None:
