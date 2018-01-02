@@ -242,7 +242,7 @@ Just like before, to be as modular as possible we start with checking whether or
         print 'Training duration (s) : ', time.time() - global_start_time
         return model, y_test, 0
 ```
-Again, we put the training into a try/except statement so that we can interrupt the training without losing everythin to a `KeyboardInterrupt`.
+Again, we put the training into a try/except statement so that we can interrupt the training without losing everything to a `KeyboardInterrupt`.
 
 To train the model, we call the `model`'s `fit` method. Nothing new here. Pretty straight forward. 
 
