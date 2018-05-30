@@ -102,6 +102,7 @@ if __name__ == "__main__":
     sent_lengths = tf.count_nonzero(input_tensor, axis=-1)
 
     with tf.Session() as sess:
+        # Initialize the iterator and the lookup table
         sess.run([iterator_init_op, tf.tables_initializer()])
         for _ in range(2):
             result = sess.run([input_tensor, labels_tensor, doc_lengths, sent_lengths])
