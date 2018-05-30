@@ -1,4 +1,4 @@
-# Creating a sequence of sequence tensorflow `Dataset``
+# Creating a sequence of sequence Tensorflow `Dataset`
 
 ## Files
 
@@ -6,11 +6,10 @@ The data comes from the [yelp review challenge](https://www.yelp.com/dataset/cha
 
 It has been sampled and processed as follows:
 
-`words.txt` -> vocabulary, one word per line
-`documents.txt` -> dataset, one document per line. Sentences separated by `|&|`, words already tokenized
-`labels.txt` -> int label for each document
-
-`tf_multi_sequence_dataset.py` -> standalone code exhibiting how to store sequences of sequences into a `tf.data.Dataset`
+* `words.txt` -> vocabulary, one word per line
+* `documents.txt` -> dataset, one document per line. Sentences separated by `|&|`, words already tokenized
+* `labels.txt` -> int label for each document
+* `tf_multi_sequence_dataset.py` -> standalone code exhibiting how to store sequences of sequences into a `tf.data.Dataset`
 
 ## Code
 
