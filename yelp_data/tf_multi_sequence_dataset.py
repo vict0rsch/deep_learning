@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     # Split a document line into a list of sentences which are padded lists of words
     # Then lookup in the vocabulary
-    documents_ds = documents_ds.map(extract_sentences, num_parallel_calls=num_threads)
+    documents_ds = documents_ds.map(extract_sentences, num_parallel_calls=num_threads)<
     documents_ds = documents_ds.map(extract_words, num_parallel_calls=num_threads)
     documents_ds = documents_ds.map(words.lookup, num_parallel_calls=num_threads)
 
@@ -113,6 +113,6 @@ if __name__ == "__main__":
 
         # Sanity check that doc_lengths and sent_lengths work as intended
         # All words after sent_len are padding words
-        print(docs[0][0][sent_len[0][0]:].sum() == 0)
+        print(docs[0][0][sent_len[0][0] :].sum() == 0)
         # All sentences after doc_len are padding sentences
-        print(docs[0][doc_len[0]:].sum() == 0)
+        print(docs[0][doc_len[0] :].sum() == 0)
