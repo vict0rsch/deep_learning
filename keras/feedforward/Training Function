@@ -1,0 +1,26 @@
+def run_network(data=None, model=None, epochs=20, batch=256):
+    try:
+        start_time = time.time()
+        if data is None:
+            X_train, X_test, y_train, y_test = load_data()
+        else:
+            X_train, X_test, y_train, y_test = data
+
+        if model is None:
+            model = init_model()
+
+        history = LossHistory()
+
+        print 'Training model...'
+        model.fit(X_train, y_train, nb_epoch=epochs, batch_size=batch,
+                  callbacks=[history],
+                  validation_data=(X_test, y_test), verbose=2)
+
+        print "Training duration : {0}".format(time.time() - start_time)
+        score = model.evaluate(X_test, y_test, batch_size=16)
+
+        print "Network's test score [loss, accuracy]: {0}".format(score)
+        return model, history.losses
+    except KeyboardInterrupt:
+        print ' KeyboardInterrupt'
+        return model, history.losses
